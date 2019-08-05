@@ -31,6 +31,13 @@
             android:textSize="15sp"
             tools:ignore="HardcodedText" />
 
+        <com.example.administrator.bloodsoulview.view.RoundImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/arena_popularity_icon" />
+
     </LinearLayout>
 
 </ScrollView>
