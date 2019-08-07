@@ -14,7 +14,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="clickBtn1"
-            android:text="线性变换颜色的textview"
+            android:text="流动布局"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="clickBtn2"
+            android:text="流动布局 RecyclerView"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="clickBtn3"
+            android:text="流动布局 自定义"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="clickBtn4"
+            android:text="外部点击 OutTouchViewGroup"
             android:textAllCaps="false"
             tools:ignore="HardcodedText" />
 

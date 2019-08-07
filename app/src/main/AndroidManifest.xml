@@ -19,7 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LayoutActivity"></activity>
+        <activity android:name=".LayoutActivity" />
+        <activity android:name=".FlowActivity" />
+        <activity android:name=".FlowRecyclerViewActivity" />
+        <activity android:name=".FlowCustomActivity" />
+        <activity android:name=".OutTouchActivity"></activity>
     </application>
 
 </manifest>
