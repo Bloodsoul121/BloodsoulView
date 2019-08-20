@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -61,6 +62,66 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:src="@drawable/arena_popularity_icon" />
+
+        <com.example.administrator.bloodsoulview.view.ScrollPageView
+            android:id="@+id/scroll_page_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/marquee_title"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:gravity="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:text="激动啊就弄弄个爱哦规定你赶工个阿侬佛弹弓个不都刚"
+            android:textSize="19dp"
+            tools:ignore="SpUsage" />
+
+        <com.example.administrator.bloodsoulview.marquee.MarqueeText
+            android:id="@+id/custom_marquee_title"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="#339320"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:text="这才是真正的文字跑马灯效果这才是真正的字跑马"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <com.example.administrator.bloodsoulview.marquee.MarqueeText2
+            android:id="@+id/custom_marquee_title2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="#339320"
+            android:singleLine="true"
+            android:text="这才是真正的文字跑马灯效果这才是真正的字跑马"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieAnimationView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#666666"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="newnewsmusical.json"
+            app:lottie_loop="true" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/guide"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="#666666"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="mg.json"
+            app:lottie_loop="true" />
 
     </LinearLayout>
 
