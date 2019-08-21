@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
-import com.airbnb.lottie.LottieDrawable;
 import com.example.administrator.bloodsoulview.marquee.MarqueeText;
 import com.example.administrator.bloodsoulview.marquee.MarqueeText2;
 import com.example.administrator.bloodsoulview.view.LinearGradientTextView;
@@ -32,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     LottieAnimationView mLottieAnimationView;
     @BindView(R.id.guide)
     LottieAnimationView mGuide;
+    @BindView(R.id.like)
+    LottieAnimationView mLike;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,8 +69,16 @@ public class MainActivity extends AppCompatActivity {
 
         mGuide.setImageAssetsFolder("images");
         mGuide.setAnimation("mg.json");
-        mGuide.setRepeatCount(LottieDrawable.INFINITE);
+//        mGuide.setRepeatCount(LottieDrawable.INFINITE);
+        mGuide.setRepeatCount(0);
         mGuide.playAnimation();
+
+        mLike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mLike.playAnimation();
+            }
+        });
     }
 
     public void clickBtn1(View view) {
@@ -86,5 +95,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickBtn4(View view) {
         startActivity(new Intent(this, OutTouchActivity.class));
+    }
+
+    public void clickBtn5(View view) {
+        startActivity(new Intent(this, ViewPagerTransformActivity.class));
     }
 }

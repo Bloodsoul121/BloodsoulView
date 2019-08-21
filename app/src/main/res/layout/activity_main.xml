@@ -43,6 +43,14 @@
             android:textAllCaps="false"
             tools:ignore="HardcodedText" />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="clickBtn5"
+            android:text="viewpager transform"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
         <!-- 自定义 view -->
 
         <com.example.administrator.bloodsoulview.view.LinearGradientTextView
@@ -122,6 +130,15 @@
             app:lottie_autoPlay="true"
             app:lottie_fileName="mg.json"
             app:lottie_loop="true" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#666666"
+            app:lottie_autoPlay="false"
+            app:lottie_fileName="like.json"
+            app:lottie_loop="false" />
 
     </LinearLayout>
 

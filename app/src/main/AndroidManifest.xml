@@ -23,7 +23,8 @@
         <activity android:name=".FlowActivity" />
         <activity android:name=".FlowRecyclerViewActivity" />
         <activity android:name=".FlowCustomActivity" />
-        <activity android:name=".OutTouchActivity"></activity>
+        <activity android:name=".OutTouchActivity" />
+        <activity android:name=".ViewPagerTransformActivity"></activity>
     </application>
 
 </manifest>
