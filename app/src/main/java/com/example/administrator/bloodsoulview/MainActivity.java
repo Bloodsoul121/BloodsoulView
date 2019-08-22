@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.airbnb.lottie.LottieDrawable;
 import com.example.administrator.bloodsoulview.marquee.MarqueeText;
 import com.example.administrator.bloodsoulview.marquee.MarqueeText2;
 import com.example.administrator.bloodsoulview.view.LinearGradientTextView;
@@ -62,16 +63,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void lottie() {
-//        mLottieAnimationView.setImageAssetsFolder("images");
+        mLottieAnimationView.setImageAssetsFolder("images2");
 //        mLottieAnimationView.setAnimation("newnewsmusical.json");
 //        mLottieAnimationView.setRepeatCount(LottieDrawable.INFINITE);
         mLottieAnimationView.playAnimation();
 
         mGuide.setImageAssetsFolder("images");
         mGuide.setAnimation("mg.json");
-//        mGuide.setRepeatCount(LottieDrawable.INFINITE);
-        mGuide.setRepeatCount(0);
-        mGuide.playAnimation();
+        mGuide.setRepeatCount(LottieDrawable.INFINITE);
+//        mGuide.setRepeatCount(0);
+//        mGuide.playAnimation();
 
         mLike.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,5 +100,25 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickBtn5(View view) {
         startActivity(new Intent(this, ViewPagerTransformActivity.class));
+    }
+
+    public void clickLottieBtnPlay(View view) {
+        mGuide.playAnimation();
+        System.out.println("mGuide isAnimating " + mGuide.isAnimating());
+    }
+
+    public void clickLottieBtnResume(View view) {
+        mGuide.resumeAnimation();
+        System.out.println("mGuide isAnimating " + mGuide.isAnimating());
+    }
+
+    public void clickLottieBtnPause(View view) {
+        mGuide.pauseAnimation();
+        System.out.println("mGuide isAnimating " + mGuide.isAnimating());
+    }
+
+    public void clickLottieBtnCancel(View view) {
+        mGuide.cancelAnimation();
+        System.out.println("mGuide isAnimating " + mGuide.isAnimating());
     }
 }

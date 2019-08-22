@@ -119,7 +119,7 @@
             android:layout_height="wrap_content"
             android:background="#666666"
             app:lottie_autoPlay="true"
-            app:lottie_fileName="newnewsmusical.json"
+            app:lottie_fileName="playermusical22.json"
             app:lottie_loop="true" />
 
         <com.airbnb.lottie.LottieAnimationView
@@ -127,9 +127,48 @@
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:background="#666666"
-            app:lottie_autoPlay="true"
+            app:lottie_autoPlay="false"
             app:lottie_fileName="mg.json"
             app:lottie_loop="true" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="clickLottieBtnPlay"
+                android:text="Play"
+                android:textAllCaps="false"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="clickLottieBtnResume"
+                android:text="Resume"
+                android:textAllCaps="false"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="clickLottieBtnPause"
+                android:text="Pause"
+                android:textAllCaps="false"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="clickLottieBtnCancel"
+                android:text="Cancel"
+                android:textAllCaps="false"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/like"
