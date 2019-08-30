@@ -12,6 +12,7 @@ import java.util.List;
 
 public class OutTouchViewGroup extends RelativeLayout {
 
+    private boolean mIsNeedConsume;
     private List<View> mTouchOutsideViews = new ArrayList<>();
     private OnTouchOutsideViewListener mOnTouchOutsideViewListener;
 
@@ -32,29 +33,45 @@ public class OutTouchViewGroup extends RelativeLayout {
     }
 
     @Override
-    public boolean dispatchTouchEvent(final MotionEvent ev) {
+    public boolean onInterceptTouchEvent(final MotionEvent ev) {
         if (ev.getAction() == MotionEvent.ACTION_DOWN) {
+
+            mIsNeedConsume = false;
+
             if (mOnTouchOutsideViewListener != null) {
+
+                boolean hasViewShow = false;
+
                 for (View view: mTouchOutsideViews) {
                     if (view.getVisibility() == View.VISIBLE) {
+                        hasViewShow = true;
                         Rect viewRect = new Rect();
                         view.getGlobalVisibleRect(viewRect);
                         if (viewRect.contains((int) ev.getRawX(), (int) ev.getRawY())) {
-                            return super.dispatchTouchEvent(ev);
+                            return super.onInterceptTouchEvent(ev);
                         }
                     }
                 }
 
-                if (mOnTouchOutsideViewListener != null) {
-                    mOnTouchOutsideViewListener.onTouchOutside(ev);
+                if (hasViewShow && mOnTouchOutsideViewListener != null) {
+                    mIsNeedConsume = true;
+                    return mOnTouchOutsideViewListener.onTouchOutside();
                 }
             }
         }
-        return super.dispatchTouchEvent(ev);
+        return super.onInterceptTouchEvent(ev);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if (mIsNeedConsume) {
+            return true;
+        }
+        return super.onTouchEvent(event);
     }
 
     public interface OnTouchOutsideViewListener {
-        void onTouchOutside(MotionEvent event);
+        boolean onTouchOutside();
     }
 
 }
