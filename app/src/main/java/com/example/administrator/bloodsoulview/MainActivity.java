@@ -1,8 +1,12 @@
 package com.example.administrator.bloodsoulview;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.TextView;
 
@@ -34,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
     LottieAnimationView mGuide;
     @BindView(R.id.like)
     LottieAnimationView mLike;
+    @BindView(R.id.color_text)
+    TextView mColorText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +66,22 @@ public class MainActivity extends AppCompatActivity {
         mCustomMarqueeTitle2.startScroll();
 
         lottie();
+
+        setColorText();
+    }
+
+    private void setColorText() {
+        // 不能用同一个 Span
+        ForegroundColorSpan blueSpan = new ForegroundColorSpan(Color.BLUE);
+        ForegroundColorSpan redSpan = new ForegroundColorSpan(Color.RED);
+
+        SpannableStringBuilder style = new SpannableStringBuilder();
+        style.append("abcdefghi");
+        style.setSpan(new ForegroundColorSpan(Color.BLUE), 0, 3, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        int length = style.length();
+        style.append("jklmnopqrstuvwxyz");
+        style.setSpan(new ForegroundColorSpan(Color.BLUE), length, style.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        mColorText.setText(style);
     }
 
     private void lottie() {

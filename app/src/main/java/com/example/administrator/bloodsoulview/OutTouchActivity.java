@@ -34,8 +34,9 @@ public class OutTouchActivity extends AppCompatActivity {
     private void init() {
         mContainer.setOnTouchOutsideViewListener(new OutTouchViewGroup.OnTouchOutsideViewListener() {
             @Override
-            public void onTouchOutside(MotionEvent event) {
+            public boolean onTouchOutside() {
                 Toast.makeText(OutTouchActivity.this, "onTouchOutside", Toast.LENGTH_SHORT).show();
+                return false;
             }
         });
 
