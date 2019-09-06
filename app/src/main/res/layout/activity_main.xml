@@ -51,6 +51,22 @@
             android:textAllCaps="false"
             tools:ignore="HardcodedText" />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="clickBtn6"
+            android:text="字体 fontFamily"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="clickBtn7"
+            android:text="弹 dialog"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
         <TextView
             android:id="@+id/color_text"
             android:layout_width="match_parent"

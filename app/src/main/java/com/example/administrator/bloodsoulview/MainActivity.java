@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.airbnb.lottie.LottieDrawable;
+import com.example.administrator.bloodsoulview.dialog.RcProgressDialog;
 import com.example.administrator.bloodsoulview.marquee.MarqueeText;
 import com.example.administrator.bloodsoulview.marquee.MarqueeText2;
 import com.example.administrator.bloodsoulview.view.LinearGradientTextView;
@@ -142,5 +143,13 @@ public class MainActivity extends AppCompatActivity {
     public void clickLottieBtnCancel(View view) {
         mGuide.cancelAnimation();
         System.out.println("mGuide isAnimating " + mGuide.isAnimating());
+    }
+
+    public void clickBtn6(View view) {
+        startActivity(new Intent(this, FontActivity.class));
+    }
+
+    public void clickBtn7(View view) {
+        RcProgressDialog.showProgressDialog(this);
     }
 }

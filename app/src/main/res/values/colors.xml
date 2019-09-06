@@ -5,4 +5,10 @@
     <color name="colorAccent">#D81B60</color>
 
     <color name="color_222222">#222222</color>
+
+    <color name="pure_white">#ffffff</color>//純白
+    <color name="pure_black">#ff000000</color>//純黑
+    <color name="red">#ff5858</color>//紅色（用於VIP特征顏色）
+    <color name="black">#333333</color>//黑色（用戶名稱，視頻標題等）
+    <color name="transparent">#00ffffff</color>
 </resources>
