@@ -67,12 +67,35 @@
             android:textAllCaps="false"
             tools:ignore="HardcodedText" />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="clickBtn8"
+            android:text="indicator"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="clickBtn9"
+            android:text="imageview blur"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
         <TextView
             android:id="@+id/color_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="abcdefghijklmnopqrstuvwxyz"
             tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/shadow_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="你们都是渣渣" />
 
         <!-- 自定义 view -->
 
@@ -155,9 +178,9 @@
             app:lottie_loop="true" />
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <Button
                 android:layout_width="wrap_content"

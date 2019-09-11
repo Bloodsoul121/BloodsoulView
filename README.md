@@ -10,3 +10,5 @@
 7.lottie动画
 8.TextView不同颜色文字效果（不能用用一个Span）
 9.系统字体
+10.圆形Indicator
+11.ImageView 高斯模糊效果

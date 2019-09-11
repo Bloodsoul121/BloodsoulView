@@ -12,9 +12,13 @@ import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.airbnb.lottie.LottieDrawable;
+import com.blankj.utilcode.util.SizeUtils;
+import com.example.administrator.bloodsoulview.blur.ImageViewBlurActivity;
 import com.example.administrator.bloodsoulview.dialog.RcProgressDialog;
+import com.example.administrator.bloodsoulview.indicator.IndicatorActivity;
 import com.example.administrator.bloodsoulview.marquee.MarqueeText;
 import com.example.administrator.bloodsoulview.marquee.MarqueeText2;
+import com.example.administrator.bloodsoulview.shadow.ShadowDrawable;
 import com.example.administrator.bloodsoulview.view.LinearGradientTextView;
 import com.example.administrator.bloodsoulview.view.ScrollPageView;
 
@@ -41,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
     LottieAnimationView mLike;
     @BindView(R.id.color_text)
     TextView mColorText;
+    @BindView(R.id.shadow_text)
+    TextView mShadowText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
         lottie();
 
         setColorText();
+
+        ShadowDrawable.setShadowDrawable(mShadowText, Color.parseColor("#2979FF"), SizeUtils.dp2px(8),
+                Color.parseColor("#992979FF"), SizeUtils.dp2px(6), 0, 0);
     }
 
     private void setColorText() {
@@ -151,5 +160,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickBtn7(View view) {
         RcProgressDialog.showProgressDialog(this);
+    }
+
+    public void clickBtn8(View view) {
+        startActivity(new Intent(this, IndicatorActivity.class));
+    }
+
+    public void clickBtn9(View view) {
+        startActivity(new Intent(this, ImageViewBlurActivity.class));
     }
 }
