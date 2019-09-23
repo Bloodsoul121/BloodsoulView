@@ -96,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void lottie() {
         mLottieAnimationView.setImageAssetsFolder("images2");
-//        mLottieAnimationView.setAnimation("newnewsmusical.json");
-//        mLottieAnimationView.setRepeatCount(LottieDrawable.INFINITE);
+        mLottieAnimationView.setAnimation("newnewsmusical.json");
+        mLottieAnimationView.setRepeatCount(LottieDrawable.INFINITE);
         mLottieAnimationView.playAnimation();
 
         mGuide.setImageAssetsFolder("images");

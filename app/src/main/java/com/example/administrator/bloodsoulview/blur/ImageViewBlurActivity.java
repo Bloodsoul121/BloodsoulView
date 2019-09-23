@@ -26,7 +26,7 @@ public class ImageViewBlurActivity extends AppCompatActivity {
         //模糊
         Resources res = getResources();
         //拿到初始图
-        Bitmap bmp = BitmapFactory.decodeResource(res, R.drawable.img_5);
+        Bitmap bmp = BitmapFactory.decodeResource(res, R.drawable.head);
         //处理得到模糊效果的图
         Bitmap blurBitmap = ImageFilter.blurBitmap(this, bmp, 20f);
         mImg.setImageBitmap(blurBitmap);

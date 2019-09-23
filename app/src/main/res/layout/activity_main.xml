@@ -163,10 +163,7 @@
             android:id="@+id/lottieAnimationView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#666666"
-            app:lottie_autoPlay="true"
-            app:lottie_fileName="playermusical22.json"
-            app:lottie_loop="true" />
+            android:background="#666666" />
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/guide"
