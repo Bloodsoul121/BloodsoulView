@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_task"
+        android:icon="@drawable/qiandao"
+        android:title="aaa"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_friends"
+        android:icon="@drawable/friend"
+        android:title="bbb"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_main_add"
+        android:icon="@drawable/add"
+        android:title="ccc"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_live"
+        android:icon="@drawable/music"
+        android:title="ddd"
+        app:showAsAction="ifRoom" />
+
+</menu>
