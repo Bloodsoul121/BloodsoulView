@@ -63,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="clickBtn7"
-            android:text="弹 dialog"
+            android:text="弹 loading dialog"
             android:textAllCaps="false"
             tools:ignore="HardcodedText" />
 
