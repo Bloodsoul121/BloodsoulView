@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".loading.LoadingActivity"></activity>
+        <activity android:name=".loopviewpager.LoopViewPagerActivity"></activity>
+        <activity android:name=".loading.LoadingActivity" />
         <activity android:name=".blur.ImageViewBlurActivity" />
         <activity android:name=".indicator.IndicatorActivity" />
         <activity android:name=".FontActivity" />

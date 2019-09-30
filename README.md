@@ -13,3 +13,4 @@
 10.圆形Indicator
 11.ImageView 高斯模糊效果
 12.loading效果的 Dialog
+13.LoopViewPager 可循环切换
