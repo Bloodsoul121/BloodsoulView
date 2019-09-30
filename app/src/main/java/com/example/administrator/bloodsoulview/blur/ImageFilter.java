@@ -9,7 +9,7 @@ import android.renderscript.ScriptIntrinsicBlur;
 
 public class ImageFilter {
 
-    //图片缩放比例
+    //图片缩放比例，越小越模糊
     private static final float BITMAP_SCALE = 0.4f;
 
     /**
