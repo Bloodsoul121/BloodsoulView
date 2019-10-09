@@ -21,6 +21,7 @@ import com.example.administrator.bloodsoulview.marquee.MarqueeText;
 import com.example.administrator.bloodsoulview.marquee.MarqueeText2;
 import com.example.administrator.bloodsoulview.optionmenu.MenuOptionActivity;
 import com.example.administrator.bloodsoulview.shadow.ShadowDrawable;
+import com.example.administrator.bloodsoulview.ticker.TickerActivity;
 import com.example.administrator.bloodsoulview.view.LinearGradientTextView;
 import com.example.administrator.bloodsoulview.view.ScrollPageView;
 
@@ -178,5 +179,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickBtn11(View view) {
         startActivity(new Intent(this, MenuOptionActivity.class));
+    }
+
+    public void clickBtn12(View view) {
+        startActivity(new Intent(this, TickerActivity.class));
     }
 }

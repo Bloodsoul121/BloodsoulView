@@ -95,6 +95,12 @@
             android:text="菜单栏 menu option"
             tools:ignore="HardcodedText" />
 
+        <Button
+            style="@style/normal_button"
+            android:onClick="clickBtn12"
+            android:text="TickerView 上下滑动的数字"
+            tools:ignore="HardcodedText" />
+
         <TextView
             android:id="@+id/color_text"
             android:layout_width="match_parent"

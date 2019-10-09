@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".optionmenu.MenuOptionActivity"></activity>
+        <activity android:name=".ticker.TickerActivity"></activity>
+        <activity android:name=".optionmenu.MenuOptionActivity" />
         <activity android:name=".loopviewpager.LoopViewPagerActivity" />
         <activity android:name=".loading.LoadingActivity" />
         <activity android:name=".blur.ImageViewBlurActivity" />
