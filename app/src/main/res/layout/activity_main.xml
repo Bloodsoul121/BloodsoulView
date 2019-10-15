@@ -96,9 +96,21 @@
             tools:ignore="HardcodedText" />
 
         <Button
+        style="@style/normal_button"
+        android:onClick="clickBtn12"
+        android:text="TickerView 上下滑动的数字"
+        tools:ignore="HardcodedText" />
+
+        <Button
             style="@style/normal_button"
-            android:onClick="clickBtn12"
-            android:text="TickerView 上下滑动的数字"
+            android:onClick="clickBtn13"
+            android:text="中东版本适配"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            style="@style/normal_button"
+            android:onClick="clickBtn14"
+            android:text="录制歌曲动效"
             tools:ignore="HardcodedText" />
 
         <TextView

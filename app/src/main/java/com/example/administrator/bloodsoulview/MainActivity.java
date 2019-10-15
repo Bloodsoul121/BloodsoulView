@@ -20,10 +20,12 @@ import com.example.administrator.bloodsoulview.loopviewpager.LoopViewPagerActivi
 import com.example.administrator.bloodsoulview.marquee.MarqueeText;
 import com.example.administrator.bloodsoulview.marquee.MarqueeText2;
 import com.example.administrator.bloodsoulview.optionmenu.MenuOptionActivity;
+import com.example.administrator.bloodsoulview.record_song.RecordSongActivity;
 import com.example.administrator.bloodsoulview.shadow.ShadowDrawable;
 import com.example.administrator.bloodsoulview.ticker.TickerActivity;
 import com.example.administrator.bloodsoulview.view.LinearGradientTextView;
 import com.example.administrator.bloodsoulview.view.ScrollPageView;
+import com.example.administrator.bloodsoulview.zhongdong.MiddleEastActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -183,5 +185,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickBtn12(View view) {
         startActivity(new Intent(this, TickerActivity.class));
+    }
+
+    public void clickBtn13(View view) {
+        startActivity(new Intent(this, MiddleEastActivity.class));
+    }
+
+    public void clickBtn14(View view) {
+        startActivity(new Intent(this, RecordSongActivity.class));
     }
 }

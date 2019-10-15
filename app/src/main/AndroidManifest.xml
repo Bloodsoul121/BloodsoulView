@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ticker.TickerActivity"></activity>
+        <activity android:name=".record_song.RecordSongActivity"></activity>
+        <activity android:name=".zhongdong.MiddleEastActivity" />
+        <activity android:name=".ticker.TickerActivity" />
         <activity android:name=".optionmenu.MenuOptionActivity" />
         <activity android:name=".loopviewpager.LoopViewPagerActivity" />
         <activity android:name=".loading.LoadingActivity" />

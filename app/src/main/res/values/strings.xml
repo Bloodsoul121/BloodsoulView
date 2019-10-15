@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">BloodsoulView</string>
+
+    <string name="sign_in_vip">تسريع 10% على الفور إلى VIP</string>
+    <string name="sign_in_vip2">تسريع%2$s على الفور إلى VIP%1$s</string>
+    <string name="sign_in_vip3">تسريعs$2% على الفور إلى VIP %1$s</string>
+    <string name="sign_in_vip_tag">على الفور إلى</string>
+
 </resources>

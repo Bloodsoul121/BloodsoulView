@@ -26,3 +26,5 @@
 12.loading效果的 Dialog
 
 13.LoopViewPager 可循环切换
+
+14.录制准备页的进度动效
