@@ -7,6 +7,7 @@
     <color name="color_222222">#222222</color>
 
     <color name="pure_white">#ffffff</color>//純白
+    <color name="pure_white_10">#1affffff</color>    //10%純白
     <color name="pure_white_4">#0affffff</color>    //4%純白
     <color name="pure_black">#ff000000</color>//純黑
     <color name="red">#ff5858</color>//紅色（用於VIP特征顏色）

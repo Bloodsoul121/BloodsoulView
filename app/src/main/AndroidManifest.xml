@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".record_song.RecordSongActivity"></activity>
+        <activity android:name=".voiceprogress.VoiceProgressActivity"></activity>
+        <activity android:name=".record_song.RecordSongActivity" />
         <activity android:name=".zhongdong.MiddleEastActivity" />
         <activity android:name=".ticker.TickerActivity" />
         <activity android:name=".optionmenu.MenuOptionActivity" />

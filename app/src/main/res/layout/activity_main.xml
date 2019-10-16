@@ -113,6 +113,12 @@
             android:text="录制歌曲动效"
             tools:ignore="HardcodedText" />
 
+        <Button
+            style="@style/normal_button"
+            android:onClick="clickBtn15"
+            android:text="录制歌曲音量控制View"
+            tools:ignore="HardcodedText" />
+
         <TextView
             android:id="@+id/color_text"
             android:layout_width="match_parent"
