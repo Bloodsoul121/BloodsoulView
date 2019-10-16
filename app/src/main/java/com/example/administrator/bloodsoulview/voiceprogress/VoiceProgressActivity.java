@@ -19,8 +19,10 @@ public class VoiceProgressActivity extends AppCompatActivity implements VoicePro
     Button mSub;
     @BindView(R.id.add)
     Button mAdd;
+    @BindView(R.id.rtl_voice_progress)
+    RtlVoiceProgress mRtlVoiceProgress;
 
-    private int mMaxLevel = 10;
+    private int mMaxLevel = 2000;
     private int mLevel;
 
     @Override
@@ -32,16 +34,21 @@ public class VoiceProgressActivity extends AppCompatActivity implements VoicePro
         mVoiceProgress.setMaxLevel(mMaxLevel);
         mVoiceProgress.setLevel(mLevel);
         mVoiceProgress.setCallback(this);
+
+        mRtlVoiceProgress.setMaxLevel(mMaxLevel);
+        mRtlVoiceProgress.setLevel(mLevel);
     }
 
     @OnClick({R.id.sub, R.id.add})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.sub:
-                mVoiceProgress.setLevel(--mLevel);
+                mLevel -= 100;
+                mVoiceProgress.setLevel(mLevel);
                 break;
             case R.id.add:
-                mVoiceProgress.setLevel(++mLevel);
+                mLevel += 100;
+                mVoiceProgress.setLevel(mLevel);
                 break;
         }
     }

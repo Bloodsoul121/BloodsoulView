@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -12,7 +13,7 @@ import android.view.View;
 import com.example.administrator.bloodsoulview.R;
 import com.example.administrator.bloodsoulview.view.MainApplication;
 
-public class VoiceProgress extends View {
+public class RtlVoiceProgress extends View {
 
     private static final int COUNT = 30;
 
@@ -32,20 +33,21 @@ public class VoiceProgress extends View {
     private float mTouchLastX;
     private float mTouchOffset;
     private int mTouchOffsetIndex;
+    private int mPreLevel;
     private Context mContext;
     private Paint mPaint;
     private Callback mCallback;
-    private int mPreLevel;
+    private RectF mRectF;
 
-    public VoiceProgress(Context context) {
+    public RtlVoiceProgress(Context context) {
         this(context, null);
     }
 
-    public VoiceProgress(Context context, @Nullable AttributeSet attrs) {
+    public RtlVoiceProgress(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public VoiceProgress(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public RtlVoiceProgress(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
     }
@@ -61,6 +63,8 @@ public class VoiceProgress extends View {
         mPaddingRight = dp2px(5);
         mPaddingTop = dp2px(2);
         mPaddingBottom = dp2px(2);
+
+        mRectF = new RectF();
     }
 
     @Override
@@ -90,20 +94,20 @@ public class VoiceProgress extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        int startX = mPaddingLeft;
+        float startX = mLength - mPaddingRight;
 
         mPaint.setColor(mContext.getResources().getColor(R.color.pure_white, null));
         for (int i = 0; i <= mCurrentIndex; i++) {
-            canvas.drawRoundRect(startX + i * mSplitLength, mHeight / 2 - (mMinHeight + i * mIncreaseHeight) / 2,
-                    startX + i * mSplitLength + mBlockWidth, mHeight / 2 + (mMinHeight + i * mIncreaseHeight) / 2,
-                    mBlockWidth / 2, mBlockWidth / 2, mPaint);
+            mRectF.set(startX - i * mSplitLength, mHeight / 2 - (mMinHeight + i * mIncreaseHeight) / 2,
+                    startX - i * mSplitLength - mBlockWidth, mHeight / 2 + (mMinHeight + i * mIncreaseHeight) / 2);
+            canvas.drawRoundRect(mRectF, mBlockWidth / 2, mBlockWidth / 2, mPaint);
         }
 
         mPaint.setColor(mContext.getResources().getColor(R.color.pure_white_10, null));
         for (int i = mCurrentIndex + 1; i < COUNT; i++) {
-            canvas.drawRoundRect(startX + i * mSplitLength, mHeight / 2 - (mMinHeight + i * mIncreaseHeight) / 2,
-                    startX + i * mSplitLength + mBlockWidth, mHeight / 2 + (mMinHeight + i * mIncreaseHeight) / 2,
-                    mBlockWidth / 2, mBlockWidth / 2, mPaint);
+            mRectF.set(startX - i * mSplitLength, mHeight / 2 - (mMinHeight + i * mIncreaseHeight) / 2,
+                    startX - i * mSplitLength - mBlockWidth, mHeight / 2 + (mMinHeight + i * mIncreaseHeight) / 2);
+            canvas.drawRoundRect(mRectF, mBlockWidth / 2, mBlockWidth / 2, mPaint);
         }
     }
 
@@ -137,7 +141,7 @@ public class VoiceProgress extends View {
                 float currentX = event.getX();
                 mTouchOffset += currentX - mTouchLastX;
                 int offsetIndex = (int) (mTouchOffset / mSplitLength);
-                mLevel += mPreLevel * (offsetIndex - mTouchOffsetIndex);
+                mLevel -= mPreLevel * (offsetIndex - mTouchOffsetIndex);
                 setLevel(mLevel);
                 invalidate();
                 mTouchLastX = currentX;
