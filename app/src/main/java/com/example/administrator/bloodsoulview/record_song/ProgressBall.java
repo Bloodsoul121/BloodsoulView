@@ -65,8 +65,23 @@ public class ProgressBall extends View {
      * @param progress 0 - 1
      */
     public void setProgress(float progress) {
-        mProgress = progress;
+        mProgress = calculateRateProgress(progress);
         invalidate();
+    }
+
+    private float calculateRateProgress(float progress) {
+        if (progress < 0) {
+            progress = 0;
+        } else if (progress > 1) {
+            progress = 1;
+        } else if (progress < 0.3f) {
+            progress = 2 * progress;
+        } else if (progress < 0.6f) {
+            progress = 0.6f + (progress - 0.3f) * 0.7f;
+        } else {
+            progress = 0.81f + (progress - 0.6f) * 0.19f / 0.4f;
+        }
+        return progress;
     }
 
     @Override
