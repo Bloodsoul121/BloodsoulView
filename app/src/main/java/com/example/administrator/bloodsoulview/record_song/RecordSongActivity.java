@@ -25,6 +25,8 @@ public class RecordSongActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record_song);
         ButterKnife.bind(this);
+
+        mProgressBall.setMaxProgress(1);
     }
 
     public void clickBtn1(View view) {

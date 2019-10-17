@@ -11,6 +11,7 @@ import com.example.administrator.bloodsoulview.R;
 
 public class ProgressBall extends View {
 
+    private float mMaxProgress = 1;
     private float mProgress;
     private Paint mBallPaint;
     private Paint mTextPaint;
@@ -59,29 +60,29 @@ public class ProgressBall extends View {
         mRadius = mDiameter / 2;
     }
 
-    /**
-     * 进度
-     *
-     * @param progress 0 - 1
-     */
     public void setProgress(float progress) {
         mProgress = calculateRateProgress(progress);
         invalidate();
     }
 
+    public void setMaxProgress(float progress) {
+        mMaxProgress = progress;
+    }
+
     private float calculateRateProgress(float progress) {
-        if (progress < 0) {
-            progress = 0;
-        } else if (progress > 1) {
-            progress = 1;
-        } else if (progress < 0.3f) {
-            progress = 2 * progress;
-        } else if (progress < 0.6f) {
-            progress = 0.6f + (progress - 0.3f) * 0.7f;
+        float perProgress = progress / mMaxProgress;
+        if (perProgress < 0) {
+            perProgress = 0;
+        } else if (perProgress > 1) {
+            perProgress = 1;
+        } else if (perProgress < 0.3f) {
+            perProgress = 2 * perProgress;
+        } else if (perProgress < 0.6f) {
+            perProgress = 0.6f + (perProgress - 0.3f) * 0.7f;
         } else {
-            progress = 0.81f + (progress - 0.6f) * 0.19f / 0.4f;
+            perProgress = 0.81f + (perProgress - 0.6f) * 0.19f / 0.4f;
         }
-        return progress;
+        return perProgress;
     }
 
     @Override
