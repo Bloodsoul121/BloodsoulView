@@ -15,4 +15,16 @@
     <color name="transparent">#00ffffff</color>
 
     <color name="color_39d8ae">#39d8ae</color>
+
+    <color name="orange">#39D8AE</color>        //橙色（歡歌主題色）
+    <color name="orange_70">#B339D8AE</color>        //70%透明度橙色（歡歌主題色）
+    <color name="orange_40">#6639D8AE</color>        //40%透明度橙色（歡歌主題色）
+    <color name="orange_10">#1a39D8AE</color>        //10%蓝色（歡歌主題色）
+    <color name="dark_orange">#31B290</color>   //深橙（用於橙色按鈕點擊效果）
+    <color name="light_color">#cccccc</color>//淺色（用於提示性文字，時間，橙色按鈕的不可點擊狀態）
+    <color name="gray">#999999</color>//灰色（用戶名稱、副標題等）
+
+    <color name="color_linear_start">#abcedf</color>
+    <color name="color_linear_end">#fdecba</color>
+
 </resources>

@@ -6,13 +6,14 @@
     <application
         android:name=".view.MainApplication"
         android:allowBackup="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/launch"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/launch"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".voiceprogress.VoiceProgressActivity"></activity>
+        <activity android:name=".linear_color.LinearColorActivity"></activity>
+        <activity android:name=".voiceprogress.VoiceProgressActivity" />
         <activity android:name=".record_song.RecordSongActivity" />
         <activity android:name=".zhongdong.MiddleEastActivity" />
         <activity android:name=".ticker.TickerActivity" />

@@ -16,6 +16,7 @@ import com.blankj.utilcode.util.SizeUtils;
 import com.example.administrator.bloodsoulview.blur.ImageViewBlurActivity;
 import com.example.administrator.bloodsoulview.dialog.RcProgressDialog;
 import com.example.administrator.bloodsoulview.indicator.IndicatorActivity;
+import com.example.administrator.bloodsoulview.linear_color.LinearColorActivity;
 import com.example.administrator.bloodsoulview.loopviewpager.LoopViewPagerActivity;
 import com.example.administrator.bloodsoulview.marquee.MarqueeText;
 import com.example.administrator.bloodsoulview.marquee.MarqueeText2;
@@ -199,5 +200,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickBtn15(View view) {
         startActivity(new Intent(this, VoiceProgressActivity.class));
+    }
+
+    public void clickBtn16(View view) {
+        startActivity(new Intent(this, LinearColorActivity.class));
     }
 }

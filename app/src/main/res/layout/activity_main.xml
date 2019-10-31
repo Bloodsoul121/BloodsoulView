@@ -119,6 +119,12 @@
             android:text="录制歌曲音量控制View"
             tools:ignore="HardcodedText" />
 
+        <Button
+            style="@style/normal_button"
+            android:onClick="clickBtn16"
+            android:text="取线性变化颜色的某一点"
+            tools:ignore="HardcodedText" />
+
         <TextView
             android:id="@+id/color_text"
             android:layout_width="match_parent"
