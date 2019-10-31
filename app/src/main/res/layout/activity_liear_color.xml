@@ -35,5 +35,26 @@
         android:thumb="@drawable/seekbar_thumb5"
         android:thumbOffset="1dp" />
 
+    <View
+        android:id="@+id/high_result_color"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_margin="10dp"
+        android:background="@color/pure_black" />
+
+    <SeekBar
+        android:id="@+id/high_seek_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:max="100"
+        android:maxHeight="5dp"
+        android:minHeight="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:progressDrawable="@drawable/progress_style1"
+        android:thumb="@drawable/seekbar_thumb5"
+        android:thumbOffset="1dp" />
 
 </LinearLayout>
