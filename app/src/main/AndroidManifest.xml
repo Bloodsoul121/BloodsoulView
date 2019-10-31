@@ -12,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".linear_color.LinearColorActivity"></activity>
+        <activity android:name=".viewpager.pager.PagerActivity"></activity>
+        <activity android:name=".viewpager.indicator.IndicatorActivity" />
+        <activity android:name=".viewpager.ViewPagerActivity" />
+        <activity android:name=".linear_color.LinearColorActivity" />
         <activity android:name=".voiceprogress.VoiceProgressActivity" />
         <activity android:name=".record_song.RecordSongActivity" />
         <activity android:name=".zhongdong.MiddleEastActivity" />

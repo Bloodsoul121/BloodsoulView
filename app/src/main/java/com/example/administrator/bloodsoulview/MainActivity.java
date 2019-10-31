@@ -26,6 +26,7 @@ import com.example.administrator.bloodsoulview.shadow.ShadowDrawable;
 import com.example.administrator.bloodsoulview.ticker.TickerActivity;
 import com.example.administrator.bloodsoulview.view.LinearGradientTextView;
 import com.example.administrator.bloodsoulview.view.ScrollPageView;
+import com.example.administrator.bloodsoulview.viewpager.ViewPagerActivity;
 import com.example.administrator.bloodsoulview.voiceprogress.VoiceProgress;
 import com.example.administrator.bloodsoulview.voiceprogress.VoiceProgressActivity;
 import com.example.administrator.bloodsoulview.zhongdong.MiddleEastActivity;
@@ -204,5 +205,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickBtn16(View view) {
         startActivity(new Intent(this, LinearColorActivity.class));
+    }
+
+    public void clickBtn17(View view) {
+        startActivity(new Intent(this, ViewPagerActivity.class));
     }
 }
