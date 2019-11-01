@@ -1,15 +1,14 @@
 package com.example.administrator.bloodsoulview.viewpager;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.example.administrator.bloodsoulview.R;
 import com.example.administrator.bloodsoulview.viewpager.indicator.IndicatorActivity;
 import com.example.administrator.bloodsoulview.viewpager.indicator.example.ExampleMainActivity;
-
-import net.lucode.hackware.magicindicator.MagicIndicator;
+import com.example.administrator.bloodsoulview.viewpager.pager.PagerActivity;
 
 public class ViewPagerActivity extends AppCompatActivity {
 
@@ -25,5 +24,9 @@ public class ViewPagerActivity extends AppCompatActivity {
 
     public void clickBtn2(View view) {
         startActivity(new Intent(this, ExampleMainActivity.class));
+    }
+
+    public void clickBtn3(View view) {
+        startActivity(new Intent(this, PagerActivity.class));
     }
 }
