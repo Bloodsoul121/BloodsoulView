@@ -95,10 +95,10 @@ public class MainActivity extends AppCompatActivity {
         ForegroundColorSpan redSpan = new ForegroundColorSpan(Color.RED);
 
         SpannableStringBuilder style = new SpannableStringBuilder();
-        style.append("abcdefghi");
-        style.setSpan(new ForegroundColorSpan(Color.BLUE), 0, 3, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        style.append("0123456");
+        style.setSpan(new ForegroundColorSpan(Color.BLUE), 1, 3, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
         int length = style.length();
-        style.append("jklmnopqrstuvwxyz");
+        style.append("789");
         style.setSpan(new ForegroundColorSpan(Color.BLUE), length, style.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         mColorText.setText(style);
     }

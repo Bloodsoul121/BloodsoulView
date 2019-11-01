@@ -135,7 +135,7 @@
             android:id="@+id/color_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="abcdefghijklmnopqrstuvwxyz"
+            android:text="0123456789"
             tools:ignore="HardcodedText" />
 
         <TextView
