@@ -1,4 +1,4 @@
-package com.example.administrator.bloodsoulview.viewpager.pager;
+package com.example.administrator.bloodsoulview.viewpager.indicator.example;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,6 +9,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.administrator.bloodsoulview.R;
+
+/**
+ * Created by hackware on 2016/9/13.
+ */
 
 public class TestFragment extends Fragment {
     public static final String EXTRA_TEXT = "extra_text";
@@ -21,9 +25,8 @@ public class TestFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        TextView textView = view.findViewById(R.id.text_view);
+        TextView textView = (TextView) view.findViewById(R.id.text_view);
         Bundle bundle = getArguments();
-        textView.setText(System.currentTimeMillis() + "");
         if (bundle != null) {
             textView.setText(bundle.getString(EXTRA_TEXT));
         }

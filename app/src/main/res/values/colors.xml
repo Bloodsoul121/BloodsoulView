@@ -27,4 +27,6 @@
     <color name="color_linear_start">#abcedf</color>
     <color name="color_linear_end">#fdecba</color>
 
+    <color name="activity_bg">#dedede</color>
+
 </resources>

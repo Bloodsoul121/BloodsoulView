@@ -12,7 +12,32 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".viewpager.pager.PagerActivity"></activity>
+        <activity android:name=".viewpager.indicator.example.ExampleMainActivity" />
+        <activity
+            android:name=".viewpager.indicator.example.ScrollableTabExampleActivity"
+            android:label="@string/scrollable_tab" />
+        <activity
+            android:name=".viewpager.indicator.example.FixedTabExampleActivity"
+            android:label="@string/fixed_tab" />
+        <activity
+            android:name=".viewpager.indicator.example.DynamicTabExampleActivity"
+            android:label="@string/dynamic_tab" />
+        <activity
+            android:name=".viewpager.indicator.example.NoTabOnlyIndicatorExampleActivity"
+            android:label="@string/no_tab_only_indicator" />
+        <activity
+            android:name=".viewpager.indicator.example.FragmentContainerExampleActivity"
+            android:label="@string/work_with_fragment_container" />
+        <activity
+            android:name=".viewpager.indicator.example.BadgeTabExampleActivity"
+            android:label="@string/tab_with_badge_view" />
+        <activity
+            android:name=".viewpager.indicator.example.CustomNavigatorExampleActivity"
+            android:label="@string/custom_navigator" />
+        <activity
+            android:name=".viewpager.indicator.example.LoadCustomLayoutExampleActivity"
+            android:label="@string/tab_with_custom_layout" />
+        <activity android:name=".viewpager.pager.PagerActivity"/>
         <activity android:name=".viewpager.indicator.IndicatorActivity" />
         <activity android:name=".viewpager.ViewPagerActivity" />
         <activity android:name=".linear_color.LinearColorActivity" />

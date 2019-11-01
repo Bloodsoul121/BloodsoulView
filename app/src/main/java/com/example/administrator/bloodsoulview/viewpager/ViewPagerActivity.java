@@ -7,6 +7,9 @@ import android.view.View;
 
 import com.example.administrator.bloodsoulview.R;
 import com.example.administrator.bloodsoulview.viewpager.indicator.IndicatorActivity;
+import com.example.administrator.bloodsoulview.viewpager.indicator.example.ExampleMainActivity;
+
+import net.lucode.hackware.magicindicator.MagicIndicator;
 
 public class ViewPagerActivity extends AppCompatActivity {
 
@@ -18,5 +21,9 @@ public class ViewPagerActivity extends AppCompatActivity {
 
     public void clickBtn1(View view) {
         startActivity(new Intent(this, IndicatorActivity.class));
+    }
+
+    public void clickBtn2(View view) {
+        startActivity(new Intent(this, ExampleMainActivity.class));
     }
 }

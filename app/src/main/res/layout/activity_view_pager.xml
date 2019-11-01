@@ -4,12 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".viewpager.ViewPagerActivity">
 
     <Button
         style="@style/normal_button"
         android:onClick="clickBtn1"
         android:text="indicator"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        style="@style/normal_button"
+        android:onClick="clickBtn2"
+        android:text="MagicIndicator"
         tools:ignore="HardcodedText" />
 
 </LinearLayout>

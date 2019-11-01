@@ -128,7 +128,7 @@
         <Button
             style="@style/normal_button"
             android:onClick="clickBtn17"
-            android:text="MagicIndicator"
+            android:text="ViewPager + MagicIndicator"
             tools:ignore="HardcodedText" />
 
         <TextView
