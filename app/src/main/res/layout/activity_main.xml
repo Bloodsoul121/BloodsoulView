@@ -131,6 +131,12 @@
             android:text="ViewPager + MagicIndicator"
             tools:ignore="HardcodedText" />
 
+        <Button
+            style="@style/normal_button"
+            android:onClick="clickBtn18"
+            android:text="转盘游戏"
+            tools:ignore="HardcodedText" />
+
         <TextView
             android:id="@+id/color_text"
             android:layout_width="match_parent"

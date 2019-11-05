@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".turntable.TruntableActivity"></activity>
         <activity android:name=".viewpager.indicator.example.ExampleMainActivity" />
         <activity
             android:name=".viewpager.indicator.example.ScrollableTabExampleActivity"
@@ -37,7 +38,7 @@
         <activity
             android:name=".viewpager.indicator.example.LoadCustomLayoutExampleActivity"
             android:label="@string/tab_with_custom_layout" />
-        <activity android:name=".viewpager.pager.PagerActivity"/>
+        <activity android:name=".viewpager.pager.PagerActivity" />
         <activity android:name=".viewpager.indicator.IndicatorActivity" />
         <activity android:name=".viewpager.ViewPagerActivity" />
         <activity android:name=".linear_color.LinearColorActivity" />
