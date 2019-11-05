@@ -94,13 +94,21 @@ public class MainActivity extends AppCompatActivity {
         ForegroundColorSpan blueSpan = new ForegroundColorSpan(Color.BLUE);
         ForegroundColorSpan redSpan = new ForegroundColorSpan(Color.RED);
 
-        SpannableStringBuilder style = new SpannableStringBuilder();
-        style.append("0123456");
-        style.setSpan(new ForegroundColorSpan(Color.BLUE), 1, 3, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
-        int length = style.length();
-        style.append("789");
-        style.setSpan(new ForegroundColorSpan(Color.BLUE), length, style.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        mColorText.setText(style);
+        // inclusive exclusive 没有插入其他数据时，都相当于 [start, end)
+        SpannableStringBuilder ssb = new SpannableStringBuilder();
+        ssb.append("0123456");
+        ssb.setSpan(new ForegroundColorSpan(Color.BLUE), 1, 3, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+        int length = ssb.length();
+        ssb.append("789");
+        ssb.setSpan(new ForegroundColorSpan(Color.BLUE), length, ssb.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        // 测试插入其他数据
+        // 证实，
+        // 1. 插入start和end中间，则直接同步颜色
+        // 1. 插入start位置，inclusive同步，exclusive不同步
+        ssb.insert(3, "s");
+
+        mColorText.setText(ssb);
     }
 
     private void lottie() {

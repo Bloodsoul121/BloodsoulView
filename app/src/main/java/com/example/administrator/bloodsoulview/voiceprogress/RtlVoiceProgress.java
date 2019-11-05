@@ -98,15 +98,15 @@ public class RtlVoiceProgress extends View {
 
         mPaint.setColor(mContext.getResources().getColor(R.color.pure_white, null));
         for (int i = 0; i <= mCurrentIndex; i++) {
-            mRectF.set(startX - i * mSplitLength, mHeight / 2 - (mMinHeight + i * mIncreaseHeight) / 2,
-                    startX - i * mSplitLength - mBlockWidth, mHeight / 2 + (mMinHeight + i * mIncreaseHeight) / 2);
+            mRectF.set(startX - i * mSplitLength - mBlockWidth, mHeight / 2 - (mMinHeight + i * mIncreaseHeight) / 2,
+                    startX - i * mSplitLength, mHeight / 2 + (mMinHeight + i * mIncreaseHeight) / 2);
             canvas.drawRoundRect(mRectF, mBlockWidth / 2, mBlockWidth / 2, mPaint);
         }
 
         mPaint.setColor(mContext.getResources().getColor(R.color.pure_white_10, null));
         for (int i = mCurrentIndex + 1; i < COUNT; i++) {
-            mRectF.set(startX - i * mSplitLength, mHeight / 2 - (mMinHeight + i * mIncreaseHeight) / 2,
-                    startX - i * mSplitLength - mBlockWidth, mHeight / 2 + (mMinHeight + i * mIncreaseHeight) / 2);
+            mRectF.set(startX - i * mSplitLength - mBlockWidth, mHeight / 2 - (mMinHeight + i * mIncreaseHeight) / 2,
+                    startX - i * mSplitLength, mHeight / 2 + (mMinHeight + i * mIncreaseHeight) / 2);
             canvas.drawRoundRect(mRectF, mBlockWidth / 2, mBlockWidth / 2, mPaint);
         }
     }
