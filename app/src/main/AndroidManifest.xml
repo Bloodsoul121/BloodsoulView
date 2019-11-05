@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".turntable.TruntableActivity"></activity>
+        <activity android:name=".turntable.TurntableActivity"></activity>
         <activity android:name=".viewpager.indicator.example.ExampleMainActivity" />
         <activity
             android:name=".viewpager.indicator.example.ScrollableTabExampleActivity"
