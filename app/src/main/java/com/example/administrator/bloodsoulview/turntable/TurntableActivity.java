@@ -24,7 +24,7 @@ public class TurntableActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         List<String> list = new ArrayList<>();
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 6; i++) {
             list.add(String.valueOf(i + 1));
         }
         mTurntableView.config(list);

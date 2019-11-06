@@ -118,7 +118,11 @@ public class TurntableNumView extends View {
             } else {
                 mPaint.setColor(Color.parseColor("#FFFFFF"));
             }
-            canvas.drawArc(mRectF, mPerAngle * i, mPerAngle, true, mPaint);
+            if (mCount % 3 == 0) {
+                canvas.drawArc(mRectF, mPerAngle * i, mPerAngle, true, mPaint);
+            } else {
+                canvas.drawArc(mRectF, mPerAngle * i + mPerAngle / 2, mPerAngle, true, mPaint);
+            }
         }
 
         canvas.save();
