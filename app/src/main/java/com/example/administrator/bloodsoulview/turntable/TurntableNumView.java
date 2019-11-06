@@ -22,17 +22,23 @@ public class TurntableNumView extends View {
     private Context mContext;
     private int mCount;
     private int mPerAngle;
-    private int mRadius;
-    private int mBgRadius;
-    private int mCenterX;
-    private int mCenterY;
+    private float mRadius;
+    private float mBgRadius;
+    private float mCenterX;
+    private float mCenterY;
+    private float mIconWidth;
+    private float mIconHeight;
+    private float mInnerMargin;
+    private boolean mIsIcon;
     private RectF mRectF;
     private Rect mBgRect;
+    private Rect mIconRect;
     private Paint mPaint;
     private Paint mNumPaint;
     private Paint mBgPaint;
     private Bitmap mBg;
     private List<String> mNums = new ArrayList<>();
+    private List<TurntableView.GestureIcon> mIcons = new ArrayList<>();
 
     public TurntableNumView(Context context) {
         this(context, null);
@@ -53,12 +59,18 @@ public class TurntableNumView extends View {
         mCount = 6;
         mPerAngle = 360 / mCount;
 
+        mIconWidth = dp2px(30);
+        mIconHeight = dp2px(30);
+        mInnerMargin = dp2px(30);
+
         for (int i = 0; i < mCount; i++) {
             mNums.add(String.valueOf(i + 1));
         }
 
         mBg = BitmapFactory.decodeResource(getResources(), R.drawable.turn_table_bg);
         mBgRect = new Rect(0, 0, mBg.getWidth(), mBg.getHeight());
+
+        mIconRect = new Rect();
 
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
@@ -75,10 +87,20 @@ public class TurntableNumView extends View {
         mBgPaint.setAntiAlias(true);
     }
 
-    public void config(List<String> nums) {
+    public void configNums(List<String> nums) {
+        mIsIcon = false;
         mNums.clear();
         mNums.addAll(nums);
         mCount = mNums.size();
+        mPerAngle = 360 / mCount;
+        invalidate();
+    }
+
+    public void configIcons(List<TurntableView.GestureIcon> icons) {
+        mIsIcon = true;
+        mIcons.clear();
+        mIcons.addAll(icons);
+        mCount = mIcons.size();
         mPerAngle = 360 / mCount;
         invalidate();
     }
@@ -130,9 +152,18 @@ public class TurntableNumView extends View {
             if (i > 0) {
                 canvas.rotate(mPerAngle, mCenterX, mCenterY);
             }
-            Paint.FontMetrics metrics = mNumPaint.getFontMetrics();
-            float textY = mCenterY / 2f + (-metrics.top - metrics.bottom - metrics.leading) / 2;
-            canvas.drawText(mNums.get(i), mCenterX, textY, mNumPaint);
+
+            if (mIsIcon) {
+                Bitmap bitmap = mIcons.get(i).bitmap;
+                mIconRect.set(0, 0, bitmap.getWidth(), bitmap.getHeight());
+                float margin = (mRadius - mIconHeight - mInnerMargin) / 2;
+                mRectF.set(mCenterX - mIconWidth / 2, mCenterY - mIconHeight - margin - mInnerMargin, mCenterX + mIconWidth / 2, mCenterY - margin - mInnerMargin);
+                canvas.drawBitmap(bitmap, mIconRect, mRectF, mBgPaint);
+            } else {
+                Paint.FontMetrics metrics = mNumPaint.getFontMetrics();
+                float textY = mCenterY - mRadius / 2 + (-metrics.top - metrics.bottom - metrics.leading) / 2 - mInnerMargin / 2;
+                canvas.drawText(mNums.get(i), mCenterX, textY, mNumPaint);
+            }
         }
         canvas.restore();
     }

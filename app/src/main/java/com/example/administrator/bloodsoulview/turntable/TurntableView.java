@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
@@ -35,6 +36,7 @@ public class TurntableView extends LinearLayout implements View.OnClickListener 
     private int mPerAngle;
     private int mResult;
     private int mResultRotation;
+    private boolean mIsIcon;
     private boolean mIsTurning;
     private Context mContext;
     private ObjectAnimator mAnimator;
@@ -51,6 +53,8 @@ public class TurntableView extends LinearLayout implements View.OnClickListener 
             }
         }
     };
+    private List<GestureIcon> mIcons;
+    private String mIconResult;
 
     private void checkNextTask() {
         if (mTurnTasks.size() == 0) {
@@ -90,10 +94,22 @@ public class TurntableView extends LinearLayout implements View.OnClickListener 
         mPerAngle = 360 / mCount;
     }
 
-    public void config(List<String> nums) {
+    public void configNums(List<String> nums) {
+        mIsIcon = false;
+        mResult = 1;
         mRotateTable.setRotation(0);
-        mRotateTable.config(nums);
+        mRotateTable.configNums(nums);
         mCount = nums.size();
+        mPerAngle = 360 / mCount;
+    }
+
+    public void configIcons(List<GestureIcon> icons) {
+        mIsIcon = true;
+        mResult = 1;
+        mRotateTable.setRotation(0);
+        mRotateTable.configIcons(icons);
+        mIcons = icons;
+        mCount = icons.size();
         mPerAngle = 360 / mCount;
     }
 
@@ -103,6 +119,9 @@ public class TurntableView extends LinearLayout implements View.OnClickListener 
         task.result = (int) (Math.random() * 6) + 1;
         task.totalTime = 8000;
         task.currentTime = 0;
+        if (mIsIcon) {
+            task.iconResult = mIcons.get(task.result - 1).result;
+        }
         startTurnTask(task);
     }
 
@@ -127,6 +146,7 @@ public class TurntableView extends LinearLayout implements View.OnClickListener 
 
         mResult = task.result;
         mResultRotation = 360 - mPerAngle * (mResult - 1);
+        mIconResult = task.iconResult;
 
         // 旋转的过程
         float process;
@@ -150,13 +170,13 @@ public class TurntableView extends LinearLayout implements View.OnClickListener 
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     super.onAnimationEnd(animation);
-                    toastEnd("result : " + mResult);
+                    toastEnd("result : " + (mIsIcon ? mIconResult : mResult));
                 }
 
                 @Override
                 public void onAnimationCancel(Animator animation) {
                     super.onAnimationCancel(animation);
-                    toastEnd("result : " + mResult);
+                    toastEnd("result : " + (mIsIcon ? mIconResult : mResult));
                 }
             });
         } else {
@@ -209,8 +229,14 @@ public class TurntableView extends LinearLayout implements View.OnClickListener 
     static class TurnTask {
         public int id;
         public int result;
+        public String iconResult;
         public long totalTime;
         public long currentTime;
+    }
+
+    static class GestureIcon {
+        public Bitmap bitmap;
+        public String result;
     }
 
 }

@@ -1,5 +1,6 @@
 package com.example.administrator.bloodsoulview.turntable;
 
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -22,12 +23,6 @@ public class TurntableActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_truntable);
         ButterKnife.bind(this);
-
-        List<String> list = new ArrayList<>();
-        for (int i = 0; i < 6; i++) {
-            list.add(String.valueOf(i + 1));
-        }
-        mTurntableView.config(list);
     }
 
     public void clickBtn1(View view) {
@@ -44,5 +39,32 @@ public class TurntableActivity extends AppCompatActivity {
         } else {
             mTurntableView.setVisibility(View.VISIBLE);
         }
+    }
+
+    public void clickBtn4(View view) {
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < 6; i++) {
+            list.add(String.valueOf(i + 1));
+        }
+        mTurntableView.configNums(list);
+    }
+
+    public void clickBtn5(View view) {
+        List<TurntableView.GestureIcon> list = new ArrayList<>();
+        for (int i = 0; i < 6; i++) {
+            TurntableView.GestureIcon gestureIcon = new TurntableView.GestureIcon();
+            if (i % 3 == 0) {
+                gestureIcon.bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.icon_bu);
+                gestureIcon.result = "布";
+            } else if (i % 3 == 1) {
+                gestureIcon.bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.icon_shitou);
+                gestureIcon.result = "石头";
+            } else {
+                gestureIcon.bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.icon_jiandao);
+                gestureIcon.result = "剪刀";
+            }
+            list.add(gestureIcon);
+        }
+        mTurntableView.configIcons(list);
     }
 }

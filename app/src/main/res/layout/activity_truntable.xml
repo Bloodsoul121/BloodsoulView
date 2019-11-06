@@ -9,13 +9,27 @@
         android:id="@+id/turn_table_view"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:layout_centerInParent="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp" />
 
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_alignParentBottom="true"
+        android:id="@+id/operation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <Button
+            style="@style/normal_button"
+            android:onClick="clickBtn4"
+            android:text="配置数字"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            style="@style/normal_button"
+            android:onClick="clickBtn5"
+            android:text="配置图片"
+            tools:ignore="HardcodedText" />
 
         <Button
             style="@style/normal_button"
