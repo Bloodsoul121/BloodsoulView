@@ -10,7 +10,7 @@
         android:id="@+id/turn_table_fold_view"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_margin="20dp"
         app:lottie_autoPlay="false"
         app:lottie_fileName="szhuanpan.json"
