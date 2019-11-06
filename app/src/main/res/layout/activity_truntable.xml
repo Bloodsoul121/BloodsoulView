@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".turntable.TurntableActivity">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/turn_table_fold_view"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+        app:lottie_autoPlay="false"
+        app:lottie_fileName="szhuanpan.json"
+        app:lottie_imageAssetsFolder="images6"
+        app:lottie_loop="false" />
 
     <com.example.administrator.bloodsoulview.turntable.TurntableView
         android:id="@+id/turn_table_view"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp" />
+        android:layout_marginTop="50dp" />
 
     <LinearLayout
         android:id="@+id/operation"
@@ -18,6 +30,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="vertical">
+
+        <Button
+            style="@style/normal_button"
+            android:onClick="clickBtn6"
+            android:text="折叠"
+            tools:ignore="HardcodedText" />
 
         <Button
             style="@style/normal_button"

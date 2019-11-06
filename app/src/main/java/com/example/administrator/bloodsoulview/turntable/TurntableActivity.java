@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.administrator.bloodsoulview.R;
 
 import java.util.ArrayList;
@@ -17,6 +18,8 @@ public class TurntableActivity extends AppCompatActivity {
 
     @BindView(R.id.turn_table_view)
     TurntableView mTurntableView;
+    @BindView(R.id.turn_table_fold_view)
+    LottieAnimationView mTurnTableFoldView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +46,7 @@ public class TurntableActivity extends AppCompatActivity {
 
     public void clickBtn4(View view) {
         List<String> list = new ArrayList<>();
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 8; i++) {
             list.add(String.valueOf(i + 1));
         }
         mTurntableView.configNums(list);
@@ -66,5 +69,13 @@ public class TurntableActivity extends AppCompatActivity {
             list.add(gestureIcon);
         }
         mTurntableView.configIcons(list);
+    }
+
+    public void clickBtn6(View view) {
+        if (mTurnTableFoldView.isAnimating()) {
+            mTurnTableFoldView.cancelAnimation();
+        } else {
+            mTurnTableFoldView.playAnimation();
+        }
     }
 }
