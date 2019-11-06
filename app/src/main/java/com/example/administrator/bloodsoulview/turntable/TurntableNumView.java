@@ -14,10 +14,13 @@ import android.view.View;
 
 import com.example.administrator.bloodsoulview.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TurntableNumView extends View {
 
     private Context mContext;
-    private int mCount = 6;
+    private int mCount;
     private int mPerAngle;
     private int mRadius;
     private int mBgRadius;
@@ -29,7 +32,7 @@ public class TurntableNumView extends View {
     private Paint mNumPaint;
     private Paint mBgPaint;
     private Bitmap mBg;
-    private String[] mNums = {"1", "2", "3", "4", "5", "6",};
+    private List<String> mNums = new ArrayList<>();
 
     public TurntableNumView(Context context) {
         this(context, null);
@@ -47,7 +50,12 @@ public class TurntableNumView extends View {
     private void init(Context context) {
         mContext = context;
         mRectF = new RectF();
+        mCount = 6;
         mPerAngle = 360 / mCount;
+
+        for (int i = 0; i < mCount; i++) {
+            mNums.add(String.valueOf(i + 1));
+        }
 
         mBg = BitmapFactory.decodeResource(getResources(), R.drawable.turn_table_bg);
         mBgRect = new Rect(0, 0, mBg.getWidth(), mBg.getHeight());
@@ -65,6 +73,14 @@ public class TurntableNumView extends View {
 
         mBgPaint = new Paint();
         mBgPaint.setAntiAlias(true);
+    }
+
+    public void config(List<String> nums) {
+        mNums.clear();
+        mNums.addAll(nums);
+        mCount = mNums.size();
+        mPerAngle = 360 / mCount;
+        invalidate();
     }
 
     @Override
@@ -112,7 +128,7 @@ public class TurntableNumView extends View {
             }
             Paint.FontMetrics metrics = mNumPaint.getFontMetrics();
             float textY = mCenterY / 2f + (-metrics.top - metrics.bottom - metrics.leading) / 2;
-            canvas.drawText(mNums[i], mCenterX, textY, mNumPaint);
+            canvas.drawText(mNums.get(i), mCenterX, textY, mNumPaint);
         }
         canvas.restore();
     }

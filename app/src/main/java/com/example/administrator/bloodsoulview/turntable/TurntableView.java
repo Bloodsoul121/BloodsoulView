@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.example.administrator.bloodsoulview.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TurntableView extends LinearLayout implements View.OnClickListener {
 
@@ -89,6 +90,13 @@ public class TurntableView extends LinearLayout implements View.OnClickListener 
         mPerAngle = 360 / mCount;
     }
 
+    public void config(List<String> nums) {
+        mRotateTable.setRotation(0);
+        mRotateTable.config(nums);
+        mCount = nums.size();
+        mPerAngle = 360 / mCount;
+    }
+
     public void receive() {
         TurnTask task = new TurnTask();
         task.id = (int) System.currentTimeMillis();
@@ -142,13 +150,13 @@ public class TurntableView extends LinearLayout implements View.OnClickListener 
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     super.onAnimationEnd(animation);
-                    toastEnd("result : " + task.result);
+                    toastEnd("result : " + mResult);
                 }
 
                 @Override
                 public void onAnimationCancel(Animator animation) {
                     super.onAnimationCancel(animation);
-                    toastEnd("result : " + task.result);
+                    toastEnd("result : " + mResult);
                 }
             });
         } else {

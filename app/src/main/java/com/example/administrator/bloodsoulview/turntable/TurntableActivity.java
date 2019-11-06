@@ -6,6 +6,9 @@ import android.view.View;
 
 import com.example.administrator.bloodsoulview.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -19,6 +22,12 @@ public class TurntableActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_truntable);
         ButterKnife.bind(this);
+
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < 8; i++) {
+            list.add(String.valueOf(i + 1));
+        }
+        mTurntableView.config(list);
     }
 
     public void clickBtn1(View view) {
