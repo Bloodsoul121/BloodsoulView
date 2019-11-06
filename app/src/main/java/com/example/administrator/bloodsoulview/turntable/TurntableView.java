@@ -5,7 +5,6 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Path;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
@@ -14,7 +13,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.PathInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -96,7 +94,7 @@ public class TurntableView extends LinearLayout implements View.OnClickListener 
         task.id = (int) System.currentTimeMillis();
         task.result = (int) (Math.random() * 6) + 1;
         task.totalTime = 8000;
-        task.remainTime = 8000;
+        task.currentTime = 0;
         startTurnTask(task);
     }
 
@@ -105,7 +103,7 @@ public class TurntableView extends LinearLayout implements View.OnClickListener 
             Toast.makeText(mContext, "转盘异常", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (mIsTurning) {
+        if (mIsTurning || (mAnimator != null && mAnimator.isRunning())) {
             mTurnTasks.add(task);
             Toast.makeText(mContext, "转动还未结束，请耐心等待", Toast.LENGTH_SHORT).show();
             return;
@@ -130,57 +128,41 @@ public class TurntableView extends LinearLayout implements View.OnClickListener 
             process = TOTAL_TURNS_NUMBLE + mPerAngle * (lastResult - mResult);
         }
 
-        // 已经播放的时间
-        float progress = (task.totalTime - task.remainTime) / task.totalTime;
-        if (progress < 0) {
-            progress = 0;
-        } else if (progress > 1) {
-            progress = 1;
-        }
-
         if (mAnimator != null) {
             mAnimator.cancel();
-            mAnimator = null;
         }
 
-        Path path = new Path();
-        path.moveTo(0f, 0f);
-        path.lineTo(0.2f, 0.12f);
-        path.lineTo(0.4f, 0.36f);
-//        path.lineTo(0.25f, 0.15f);
-//        path.lineTo(0.5f, 0.5f);
-//        path.lineTo(0.75f, 0.85f);
-        path.lineTo(0.6f, 0.64f);
-        path.lineTo(0.8f, 0.88f);
-        path.lineTo(1, 1);
+        if (mAnimator == null) {
+            mAnimator = ObjectAnimator.ofFloat(mRotateTable, "rotation", lastResultRotation, lastResultRotation + process);
+            mAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
+            mAnimator.setRepeatCount(0);
+            mAnimator.setDuration(task.totalTime);
+            mAnimator.setCurrentPlayTime(task.currentTime);
+            mAnimator.addListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    super.onAnimationEnd(animation);
+                    toastEnd("result : " + task.result);
+                }
 
-        PathInterpolator pathInterpolator = new PathInterpolator(path);
+                @Override
+                public void onAnimationCancel(Animator animation) {
+                    super.onAnimationCancel(animation);
+                    toastEnd("result : " + task.result);
+                }
+            });
+        } else {
+            mAnimator.setFloatValues(lastResultRotation, lastResultRotation + process);
+            mAnimator.setDuration(task.totalTime);
+            mAnimator.setCurrentPlayTime(task.currentTime);
+        }
 
-        mAnimator = ObjectAnimator.ofFloat(mRotateTable, "rotation", lastResultRotation, lastResultRotation + process);
-        mAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
-        mAnimator.setRepeatCount(0);
-        mAnimator.setDuration(task.totalTime);
-        mAnimator.setCurrentPlayTime(task.remainTime);
-        mAnimator.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                super.onAnimationEnd(animation);
-                toastEnd("result : " + task.result);
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animation) {
-                super.onAnimationCancel(animation);
-                toastEnd("result : " + task.result);
-            }
-        });
         mAnimator.start();
     }
 
     public void forceStop() {
         if (mAnimator != null) {
             mAnimator.cancel();
-            mAnimator = null;
         }
         mRotateTable.setRotation(mResultRotation);
     }
@@ -220,7 +202,7 @@ public class TurntableView extends LinearLayout implements View.OnClickListener 
         public int id;
         public int result;
         public long totalTime;
-        public long remainTime;
+        public long currentTime;
     }
 
 }
