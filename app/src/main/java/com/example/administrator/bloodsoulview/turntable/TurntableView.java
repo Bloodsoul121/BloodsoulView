@@ -2,19 +2,19 @@ package com.example.administrator.bloodsoulview.turntable;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.animation.Keyframe;
 import android.animation.ObjectAnimator;
-import android.animation.PropertyValuesHolder;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Path;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.PathInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -23,28 +23,22 @@ import com.example.administrator.bloodsoulview.R;
 
 import java.util.ArrayList;
 
-public class TurntableView extends LinearLayout {
+public class TurntableView extends LinearLayout implements View.OnClickListener {
 
     private static final String TAG = TurntableView.class.getSimpleName();
 
-    private static final int TOTAL_TURNS_NUMBLE = 10 * 360;
-    private static final int TURNS_TIME = 8000;
-    private static final int COUNT = 6;
-
     private static final int CHECK_NEXT_TURN = 0x01;
+    private static final int TOTAL_TURNS_NUMBLE = 4 * 360;
 
-    private static final int result_1 = 1;
-    private static final int result_2 = 2;
-    private static final int result_3 = 3;
-    private static final int result_4 = 4;
-    private static final int result_5 = 5;
-    private static final int result_6 = 6;
+    private TurntableNumView mRotateTable;
 
-    private Context mContext;
-    private ImageView mRotateTable;
-    private ObjectAnimator mAnimator;
+    private int mCount;
+    private int mPerAngle;
+    private int mResult;
     private int mResultRotation;
     private boolean mIsTurning;
+    private Context mContext;
+    private ObjectAnimator mAnimator;
     private ArrayList<TurnTask> mTurnTasks = new ArrayList<>();
 
     @SuppressLint("HandlerLeak")
@@ -88,7 +82,13 @@ public class TurntableView extends LinearLayout {
     private void init(Context context) {
         mContext = context;
         LayoutInflater.from(context).inflate(R.layout.layout_truntable_view, this, true);
-        mRotateTable = findViewById(R.id.rotate_table);
+        mRotateTable = findViewById(R.id.turn_table_num);
+        ImageView rotateGo = findViewById(R.id.turn_table_go);
+        rotateGo.setOnClickListener(this);
+
+        mResult = 1;
+        mCount = 6;
+        mPerAngle = 360 / mCount;
     }
 
     public void receive() {
@@ -115,28 +115,52 @@ public class TurntableView extends LinearLayout {
 
     private void start(final TurnTask task) {
         mIsTurning = true;
-        int taskId = task.id;
-        int result = task.result;
-        mResultRotation = 360 / COUNT * (result - 1);
-        float total = TOTAL_TURNS_NUMBLE + mResultRotation;
-        Keyframe keyframe1 = Keyframe.ofFloat(0, 0);
-        Keyframe keyframe2 = Keyframe.ofFloat(0.25f, total / 5f);
-        Keyframe keyframe3 = Keyframe.ofFloat(0.5f, total / 2f);
-        Keyframe keyframe4 = Keyframe.ofFloat(0.75f, total * 4f / 5f);
-        Keyframe keyframe5 = Keyframe.ofFloat(1f, total);
+
+        int lastResult = mResult;
+        int lastResultRotation = 360 - mPerAngle * (lastResult - 1);
+
+        mResult = task.result;
+        mResultRotation = 360 - mPerAngle * (mResult - 1);
+
+        // 旋转的过程
+        float process;
+        if (mResult > lastResult) {
+            process = TOTAL_TURNS_NUMBLE + (360 - mPerAngle * (mResult - lastResult));
+        } else {
+            process = TOTAL_TURNS_NUMBLE + mPerAngle * (lastResult - mResult);
+        }
+
+        // 已经播放的时间
+        float progress = (task.totalTime - task.remainTime) / task.totalTime;
+        if (progress < 0) {
+            progress = 0;
+        } else if (progress > 1) {
+            progress = 1;
+        }
 
         if (mAnimator != null) {
             mAnimator.cancel();
             mAnimator = null;
         }
 
-        mRotateTable.setRotation(0);
+        Path path = new Path();
+        path.moveTo(0f, 0f);
+        path.lineTo(0.2f, 0.12f);
+        path.lineTo(0.4f, 0.36f);
+//        path.lineTo(0.25f, 0.15f);
+//        path.lineTo(0.5f, 0.5f);
+//        path.lineTo(0.75f, 0.85f);
+        path.lineTo(0.6f, 0.64f);
+        path.lineTo(0.8f, 0.88f);
+        path.lineTo(1, 1);
 
-        PropertyValuesHolder propertyValuesHolder = PropertyValuesHolder.ofKeyframe("rotation",
-                keyframe1, keyframe2, keyframe3, keyframe4, keyframe5);
-        mAnimator = ObjectAnimator.ofPropertyValuesHolder(mRotateTable, propertyValuesHolder);
+        PathInterpolator pathInterpolator = new PathInterpolator(path);
+
+        mAnimator = ObjectAnimator.ofFloat(mRotateTable, "rotation", lastResultRotation, lastResultRotation + process);
+        mAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
         mAnimator.setRepeatCount(0);
-        mAnimator.setDuration(TURNS_TIME);
+        mAnimator.setDuration(task.totalTime);
+        mAnimator.setCurrentPlayTime(task.remainTime);
         mAnimator.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
@@ -183,11 +207,20 @@ public class TurntableView extends LinearLayout {
         toast.show();
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.turn_table_go:
+                receive();
+                break;
+        }
+    }
+
     static class TurnTask {
         public int id;
         public int result;
-        public int totalTime;
-        public int remainTime;
+        public long totalTime;
+        public long remainTime;
     }
 
 }
