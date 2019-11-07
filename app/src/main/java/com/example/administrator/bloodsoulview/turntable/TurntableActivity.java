@@ -90,6 +90,8 @@ public class TurntableActivity extends AppCompatActivity {
                 mTestView.playAnimation();
                 break;
             case R.id.turn_table_fold_view:
+                mTurnTableFoldView.setMinAndMaxProgress(0.5f, 1f);
+                mTurnTableFoldView.playAnimation();
                 break;
         }
     }
