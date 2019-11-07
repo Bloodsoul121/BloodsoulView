@@ -13,13 +13,16 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class TurntableActivity extends AppCompatActivity {
 
     @BindView(R.id.turn_table_view)
-    TurntableView mTurntableView;
+    TurnTableShowView mTurnTableShowView;
     @BindView(R.id.turn_table_fold_view)
     LottieAnimationView mTurnTableFoldView;
+    @BindView(R.id.test_view)
+    LottieAnimationView mTestView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,18 +32,18 @@ public class TurntableActivity extends AppCompatActivity {
     }
 
     public void clickBtn1(View view) {
-        mTurntableView.receive();
+        mTurnTableShowView.receive();
     }
 
     public void clickBtn2(View view) {
-        mTurntableView.forceStop();
+        mTurnTableShowView.forceStop();
     }
 
     public void clickBtn3(View view) {
-        if (mTurntableView.getVisibility() == View.VISIBLE) {
-            mTurntableView.setVisibility(View.GONE);
+        if (mTurnTableShowView.getVisibility() == View.VISIBLE) {
+            mTurnTableShowView.setVisibility(View.GONE);
         } else {
-            mTurntableView.setVisibility(View.VISIBLE);
+            mTurnTableShowView.setVisibility(View.VISIBLE);
         }
     }
 
@@ -49,13 +52,13 @@ public class TurntableActivity extends AppCompatActivity {
         for (int i = 0; i < 8; i++) {
             list.add(String.valueOf(i + 1));
         }
-        mTurntableView.configNums(list);
+        mTurnTableShowView.configNums(list);
     }
 
     public void clickBtn5(View view) {
-        List<TurntableView.GestureIcon> list = new ArrayList<>();
+        List<TurnTableShowView.GestureIcon> list = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
-            TurntableView.GestureIcon gestureIcon = new TurntableView.GestureIcon();
+            TurnTableShowView.GestureIcon gestureIcon = new TurnTableShowView.GestureIcon();
             if (i % 3 == 0) {
                 gestureIcon.bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.icon_bu);
                 gestureIcon.result = "布";
@@ -68,7 +71,7 @@ public class TurntableActivity extends AppCompatActivity {
             }
             list.add(gestureIcon);
         }
-        mTurntableView.configIcons(list);
+        mTurnTableShowView.configIcons(list);
     }
 
     public void clickBtn6(View view) {
@@ -76,6 +79,18 @@ public class TurntableActivity extends AppCompatActivity {
             mTurnTableFoldView.cancelAnimation();
         } else {
             mTurnTableFoldView.playAnimation();
+        }
+    }
+
+    @OnClick({R.id.test_view, R.id.turn_table_fold_view})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.test_view:
+                mTestView.setMinAndMaxProgress(0.5f, 1f);
+                mTestView.playAnimation();
+                break;
+            case R.id.turn_table_fold_view:
+                break;
         }
     }
 }

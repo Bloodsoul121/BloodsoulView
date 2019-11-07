@@ -23,14 +23,14 @@ import com.example.administrator.bloodsoulview.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TurntableView extends LinearLayout implements View.OnClickListener {
+public class TurnTableShowView extends LinearLayout implements View.OnClickListener {
 
-    private static final String TAG = TurntableView.class.getSimpleName();
+    private static final String TAG = TurnTableShowView.class.getSimpleName();
 
     private static final int CHECK_NEXT_TURN = 0x01;
     private static final int TOTAL_TURNS_NUMBLE = 4 * 360;
 
-    private TurntableNumView mRotateTable;
+    private TurnTableNumView mRotateTable;
 
     private int mCount;
     private int mPerAngle;
@@ -69,15 +69,15 @@ public class TurntableView extends LinearLayout implements View.OnClickListener 
         toastEnd("result : " + task.result);
     }
 
-    public TurntableView(Context context) {
+    public TurnTableShowView(Context context) {
         this(context, null);
     }
 
-    public TurntableView(Context context, @Nullable AttributeSet attrs) {
+    public TurnTableShowView(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public TurntableView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public TurnTableShowView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
     }

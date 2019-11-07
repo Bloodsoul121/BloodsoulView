@@ -5,7 +5,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <com.example.administrator.bloodsoulview.turntable.TurntableNumView
+    <com.example.administrator.bloodsoulview.turntable.TurnTableNumView
         android:id="@+id/turn_table_num"
         android:layout_width="235dp"
         android:layout_height="235dp"

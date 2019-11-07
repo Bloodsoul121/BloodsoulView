@@ -17,7 +17,7 @@ import com.example.administrator.bloodsoulview.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TurntableNumView extends View {
+public class TurnTableNumView extends View {
 
     private Context mContext;
     private int mCount;
@@ -38,17 +38,17 @@ public class TurntableNumView extends View {
     private Paint mBgPaint;
     private Bitmap mBg;
     private List<String> mNums = new ArrayList<>();
-    private List<TurntableView.GestureIcon> mIcons = new ArrayList<>();
+    private List<TurnTableShowView.GestureIcon> mIcons = new ArrayList<>();
 
-    public TurntableNumView(Context context) {
+    public TurnTableNumView(Context context) {
         this(context, null);
     }
 
-    public TurntableNumView(Context context, @Nullable AttributeSet attrs) {
+    public TurnTableNumView(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public TurntableNumView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public TurnTableNumView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
     }
@@ -96,7 +96,7 @@ public class TurntableNumView extends View {
         invalidate();
     }
 
-    public void configIcons(List<TurntableView.GestureIcon> icons) {
+    public void configIcons(List<TurnTableShowView.GestureIcon> icons) {
         mIsIcon = true;
         mIcons.clear();
         mIcons.addAll(icons);
