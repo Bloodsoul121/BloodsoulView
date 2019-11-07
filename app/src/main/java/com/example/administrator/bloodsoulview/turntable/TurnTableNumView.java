@@ -140,7 +140,7 @@ public class TurnTableNumView extends View {
             } else {
                 mPaint.setColor(Color.parseColor("#FFFFFF"));
             }
-            if (mCount % 3 == 0) {
+            if ((mCount / 2) % 2 == 1) {
                 canvas.drawArc(mRectF, mPerAngle * i, mPerAngle, true, mPaint);
             } else {
                 canvas.drawArc(mRectF, mPerAngle * i + mPerAngle / 2, mPerAngle, true, mPaint);
