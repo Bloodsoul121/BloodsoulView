@@ -1,6 +1,5 @@
 package com.example.administrator.bloodsoulview.turntable;
 
-import android.util.Log;
 import android.view.animation.BaseInterpolator;
 
 /**
