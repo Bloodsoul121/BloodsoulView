@@ -87,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
 
         ShadowDrawable.setShadowDrawable(mShadowText, Color.parseColor("#2979FF"), SizeUtils.dp2px(8),
                 Color.parseColor("#992979FF"), SizeUtils.dp2px(6), 0, 0);
+
+        clickBtn18(null);
     }
 
     private void setColorText() {

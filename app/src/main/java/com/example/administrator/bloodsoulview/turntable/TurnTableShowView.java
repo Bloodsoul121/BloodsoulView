@@ -27,7 +27,7 @@ public class TurnTableShowView extends LinearLayout implements View.OnClickListe
     private static final String TAG = TurnTableShowView.class.getSimpleName();
 
     private static final int CHECK_NEXT_TURN = 0x01;
-    private static final int TOTAL_TURNS_NUMBLE = 8 * 360;
+    private static final int TOTAL_TURNS_NUMBLE = 6 * 360;
 
     private TurnTableNumView mRotateTable;
 
