@@ -13,7 +13,6 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -28,7 +27,7 @@ public class TurnTableShowView extends LinearLayout implements View.OnClickListe
     private static final String TAG = TurnTableShowView.class.getSimpleName();
 
     private static final int CHECK_NEXT_TURN = 0x01;
-    private static final int TOTAL_TURNS_NUMBLE = 4 * 360;
+    private static final int TOTAL_TURNS_NUMBLE = 8 * 360;
 
     private TurnTableNumView mRotateTable;
 
@@ -162,7 +161,7 @@ public class TurnTableShowView extends LinearLayout implements View.OnClickListe
 
         if (mAnimator == null) {
             mAnimator = ObjectAnimator.ofFloat(mRotateTable, "rotation", lastResultRotation, lastResultRotation + process);
-            mAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
+            mAnimator.setInterpolator(new TurnTableInterpolator());
             mAnimator.setRepeatCount(0);
             mAnimator.setDuration(task.totalTime);
             mAnimator.setCurrentPlayTime(task.currentTime);
