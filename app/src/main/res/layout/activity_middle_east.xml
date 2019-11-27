@@ -24,4 +24,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <TextView
+        android:id="@+id/tv3"
+        android:padding="10dp"
+        android:textDirection="rtl"
+        android:textAlignment="viewStart"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:text="خطأ في النظام ، يتعذر بشكل مؤقت تقديم الخدمة ، يرجى المحاولة مرة أخرى في وقت لاحق"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

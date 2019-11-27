@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".turntable.TurntableActivity"></activity>
+        <activity android:name=".lottie.LottieActivity"></activity>
+        <activity android:name=".turntable.TurntableActivity" />
         <activity android:name=".viewpager.indicator.example.ExampleMainActivity" />
         <activity
             android:name=".viewpager.indicator.example.ScrollableTabExampleActivity"
@@ -66,6 +67,13 @@
         <activity android:name=".OutTouchActivity" />
         <activity android:name=".ViewPagerTransformActivity" />
         <activity android:name=".RtlActivity" />
+
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="360" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="640" />
     </application>
 
 </manifest>

@@ -96,10 +96,10 @@
             tools:ignore="HardcodedText" />
 
         <Button
-        style="@style/normal_button"
-        android:onClick="clickBtn12"
-        android:text="TickerView 上下滑动的数字"
-        tools:ignore="HardcodedText" />
+            style="@style/normal_button"
+            android:onClick="clickBtn12"
+            android:text="TickerView 上下滑动的数字"
+            tools:ignore="HardcodedText" />
 
         <Button
             style="@style/normal_button"
@@ -135,6 +135,12 @@
             style="@style/normal_button"
             android:onClick="clickBtn18"
             android:text="转盘游戏"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            style="@style/normal_button"
+            android:onClick="clickBtn19"
+            android:text="Lottie"
             tools:ignore="HardcodedText" />
 
         <TextView

@@ -18,6 +18,7 @@ import com.example.administrator.bloodsoulview.dialog.RcProgressDialog;
 import com.example.administrator.bloodsoulview.indicator.IndicatorActivity;
 import com.example.administrator.bloodsoulview.linear_color.LinearColorActivity;
 import com.example.administrator.bloodsoulview.loopviewpager.LoopViewPagerActivity;
+import com.example.administrator.bloodsoulview.lottie.LottieActivity;
 import com.example.administrator.bloodsoulview.marquee.MarqueeText;
 import com.example.administrator.bloodsoulview.marquee.MarqueeText2;
 import com.example.administrator.bloodsoulview.optionmenu.MenuOptionActivity;
@@ -222,5 +223,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickBtn18(View view) {
         startActivity(new Intent(this, TurntableActivity.class));
+    }
+
+    public void clickBtn19(View view) {
+        startActivity(new Intent(this, LottieActivity.class));
     }
 }
