@@ -22,32 +22,112 @@
                 android:layout_height="50dp" />
 
             <com.airbnb.lottie.LottieAnimationView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#666666"
+                android:layout_width="77dp"
+                android:layout_height="77dp"
+                android:background="@drawable/circle_bg"
                 app:lottie_autoPlay="true"
-                app:lottie_fileName="emoji/ganxie.json"
-                app:lottie_imageAssetsFolder="emoji/images1"
+                app:lottie_fileName="radio_emoji/101/101.json"
+                app:lottie_imageAssetsFolder="radio_emoji/101/images"
                 app:lottie_loop="true" />
 
             <com.airbnb.lottie.LottieAnimationView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="77dp"
+                android:layout_height="77dp"
                 android:layout_marginTop="10dp"
-                android:background="#666666"
+                android:background="@drawable/circle_bg"
                 app:lottie_autoPlay="true"
-                app:lottie_fileName="emoji/yunla.json"
-                app:lottie_imageAssetsFolder="emoji/images2"
+                app:lottie_fileName="radio_emoji/102/102.json"
+                app:lottie_imageAssetsFolder="radio_emoji/102/images"
                 app:lottie_loop="true" />
 
             <com.airbnb.lottie.LottieAnimationView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="77dp"
+                android:layout_height="77dp"
                 android:layout_marginTop="10dp"
-                android:background="#666666"
+                android:background="@drawable/circle_bg"
                 app:lottie_autoPlay="true"
-                app:lottie_fileName="emoji/byebye.json"
-                app:lottie_imageAssetsFolder="emoji/images3"
+                app:lottie_fileName="radio_emoji/107/107.json"
+                app:lottie_imageAssetsFolder="radio_emoji/107/images"
+                app:lottie_loop="true" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="77dp"
+                android:layout_height="77dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/circle_bg"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="radio_emoji/109/109.json"
+                app:lottie_imageAssetsFolder="radio_emoji/109/images"
+                app:lottie_loop="true" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="77dp"
+                android:layout_height="77dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/circle_bg"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="radio_emoji/103/103.json"
+                app:lottie_imageAssetsFolder="radio_emoji/103/images"
+                app:lottie_loop="true" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="77dp"
+                android:layout_height="77dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/circle_bg"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="radio_emoji/104/104.json"
+                app:lottie_imageAssetsFolder="radio_emoji/104/images"
+                app:lottie_loop="true" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="77dp"
+                android:layout_height="77dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/circle_bg"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="radio_emoji/105/105.json"
+                app:lottie_imageAssetsFolder="radio_emoji/105/images"
+                app:lottie_loop="true" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="77dp"
+                android:layout_height="77dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/circle_bg"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="radio_emoji/106/106.json"
+                app:lottie_imageAssetsFolder="radio_emoji/106/images"
+                app:lottie_loop="true" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="77dp"
+                android:layout_height="77dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/circle_bg"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="radio_emoji/108/108.json"
+                app:lottie_imageAssetsFolder="radio_emoji/108/images"
+                app:lottie_loop="true" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="77dp"
+                android:layout_height="77dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/circle_bg"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="radio_emoji/110/110.json"
+                app:lottie_imageAssetsFolder="radio_emoji/110/images"
+                app:lottie_loop="true" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="77dp"
+                android:layout_height="77dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/circle_bg"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="radio_emoji/111/111.json"
+                app:lottie_imageAssetsFolder="radio_emoji/111/images"
                 app:lottie_loop="true" />
 
             <com.airbnb.lottie.LottieAnimationView
