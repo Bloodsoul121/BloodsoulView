@@ -8,6 +8,9 @@ import com.robinhood.ticker.TickerUtils
 import kotlinx.android.synthetic.main.activity_ticker.*
 import kotlin.random.Random
 
+/**
+ *  https://github.com/robinhood/ticker
+ */
 class TickerActivity : AppCompatActivity() {
 
     private val random = Random(1)
@@ -36,6 +39,7 @@ class TickerActivity : AppCompatActivity() {
         randomView.text = random.toString()
         val num = System.currentTimeMillis() * random
         tickerView.text = num.toString()
+//        tickerView.setText(num.toString(), false) // 取消动画
     }
 
 }
