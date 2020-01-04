@@ -143,6 +143,12 @@
             android:text="Lottie"
             tools:ignore="HardcodedText" />
 
+        <Button
+            style="@style/normal_button"
+            android:onClick="clickBtn20"
+            android:text="ClickSpan 点击 BUG"
+            tools:ignore="HardcodedText" />
+
         <TextView
             android:id="@+id/color_text"
             android:layout_width="match_parent"

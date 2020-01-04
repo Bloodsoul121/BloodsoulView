@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".lottie.LottieActivity"></activity>
+        <activity android:name=".clickspan.ClickSpanActivity"></activity>
+        <activity android:name=".lottie.LottieActivity" />
         <activity android:name=".turntable.TurntableActivity" />
         <activity android:name=".viewpager.indicator.example.ExampleMainActivity" />
         <activity

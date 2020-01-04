@@ -14,6 +14,7 @@ import com.airbnb.lottie.LottieAnimationView;
 import com.airbnb.lottie.LottieDrawable;
 import com.blankj.utilcode.util.SizeUtils;
 import com.example.administrator.bloodsoulview.blur.ImageViewBlurActivity;
+import com.example.administrator.bloodsoulview.clickspan.ClickSpanActivity;
 import com.example.administrator.bloodsoulview.dialog.RcProgressDialog;
 import com.example.administrator.bloodsoulview.indicator.IndicatorActivity;
 import com.example.administrator.bloodsoulview.linear_color.LinearColorActivity;
@@ -227,5 +228,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickBtn19(View view) {
         startActivity(new Intent(this, LottieActivity.class));
+    }
+
+    public void clickBtn20(View view) {
+        startActivity(new Intent(this, ClickSpanActivity.class));
     }
 }

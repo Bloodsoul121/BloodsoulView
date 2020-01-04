@@ -36,3 +36,7 @@
 17.MagicIndicator
 
 18.转盘游戏
+
+19.表情
+
+20.ClickSpannable导致的上层View点击事件无效

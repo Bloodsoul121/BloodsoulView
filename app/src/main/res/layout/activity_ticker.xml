@@ -24,6 +24,7 @@
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         app:ticker_animationDuration="1500"
+        app:ticker_defaultCharacterList="number"
         app:ticker_defaultPreferredScrollingDirection="any" />
 
     <com.robinhood.ticker.TickerView
