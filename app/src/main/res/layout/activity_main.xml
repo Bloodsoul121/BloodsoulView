@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:overScrollMode="never"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -147,6 +148,12 @@
             style="@style/normal_button"
             android:onClick="clickBtn20"
             android:text="ClickSpan 点击 BUG"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            style="@style/normal_button"
+            android:onClick="clickBtn21"
+            android:text="宇宙粒子效果"
             tools:ignore="HardcodedText" />
 
         <TextView

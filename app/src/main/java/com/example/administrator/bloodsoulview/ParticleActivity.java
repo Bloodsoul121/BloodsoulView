@@ -3,11 +3,13 @@ package com.example.administrator.bloodsoulview;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class FlowCustomActivity extends AppCompatActivity {
+public class ParticleActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_flow_custom);
+        setContentView(R.layout.activity_particle);
+
+
     }
 }

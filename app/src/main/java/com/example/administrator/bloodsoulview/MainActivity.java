@@ -3,7 +3,7 @@ package com.example.administrator.bloodsoulview;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
@@ -232,5 +232,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickBtn20(View view) {
         startActivity(new Intent(this, ClickSpanActivity.class));
+    }
+
+    public void clickBtn21(View view) {
+        startActivity(new Intent(this, ParticleActivity.class));
     }
 }

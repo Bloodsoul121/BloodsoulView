@@ -1,8 +1,7 @@
 package com.example.administrator.bloodsoulview.flow;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
 import android.util.DisplayMetrics;
 import android.util.SparseArray;
 import android.util.SparseIntArray;
@@ -12,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.administrator.bloodsoulview.R;
 import com.example.administrator.bloodsoulview.util.SizeUtil;

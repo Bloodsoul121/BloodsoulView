@@ -1,17 +1,17 @@
 package com.example.administrator.bloodsoulview.flow;
 
 import android.graphics.Rect;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.LayoutManager;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by Administrator on 2018/8/28 0028.
  */
 
-public class StudyLayoutManager extends LayoutManager{
+public class StudyLayoutManager extends RecyclerView.LayoutManager {
 
     //    所有数据高度和
     private int totalHeight = 0;

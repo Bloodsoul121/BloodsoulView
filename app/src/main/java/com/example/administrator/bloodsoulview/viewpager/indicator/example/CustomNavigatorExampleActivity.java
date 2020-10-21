@@ -2,8 +2,8 @@ package com.example.administrator.bloodsoulview.viewpager.indicator.example;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.administrator.bloodsoulview.R;
 import com.example.administrator.bloodsoulview.viewpager.indicator.ext.navigator.ScaleCircleNavigator;
