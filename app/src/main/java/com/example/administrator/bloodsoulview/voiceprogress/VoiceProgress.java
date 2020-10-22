@@ -10,7 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.example.administrator.bloodsoulview.R;
-import com.example.administrator.bloodsoulview.view.MainApplication;
+import com.example.administrator.bloodsoulview.MainApplication;
 
 public class VoiceProgress extends View {
 

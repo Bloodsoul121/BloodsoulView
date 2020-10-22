@@ -1,4 +1,4 @@
-package com.example.administrator.bloodsoulview.view;
+package com.example.administrator.bloodsoulview;
 
 import android.app.Application;
 
