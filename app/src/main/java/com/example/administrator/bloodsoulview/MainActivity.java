@@ -237,4 +237,8 @@ public class MainActivity extends AppCompatActivity {
     public void clickBtn21(View view) {
         startActivity(new Intent(this, ParticleActivity.class));
     }
+
+    public void clickBtn22(View view) {
+        startActivity(new Intent(this, TransitionActivity.class));
+    }
 }

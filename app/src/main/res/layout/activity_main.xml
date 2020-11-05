@@ -156,6 +156,12 @@
             android:text="宇宙粒子效果"
             tools:ignore="HardcodedText" />
 
+        <Button
+            style="@style/normal_button"
+            android:onClick="clickBtn22"
+            android:text="Transition 转场动画"
+            tools:ignore="HardcodedText" />
+
         <TextView
             android:id="@+id/color_text"
             android:layout_width="match_parent"

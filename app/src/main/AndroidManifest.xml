@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ParticleActivity"></activity>
+        <activity android:name=".TransitionActivity"></activity>
+        <activity android:name=".ParticleActivity" />
         <activity android:name=".clickspan.ClickSpanActivity" />
         <activity android:name=".lottie.LottieActivity" />
         <activity android:name=".turntable.TurntableActivity" />
