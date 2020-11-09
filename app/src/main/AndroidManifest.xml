@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".TransitionActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".TransitionActivity" />
         <activity android:name=".ParticleActivity" />
         <activity android:name=".clickspan.ClickSpanActivity" />
         <activity android:name=".lottie.LottieActivity" />
@@ -61,7 +62,7 @@
         <activity android:name=".blur.ImageViewBlurActivity" />
         <activity android:name=".indicator.IndicatorActivity" />
         <activity android:name=".FontActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".splash.SplashActivity" android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
