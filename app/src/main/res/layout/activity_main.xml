@@ -162,6 +162,12 @@
             android:text="Transition 转场动画"
             tools:ignore="HardcodedText" />
 
+        <Button
+            style="@style/normal_button"
+            android:onClick="clickBtn23"
+            android:text="加载大长图"
+            tools:ignore="HardcodedText" />
+
         <TextView
             android:id="@+id/color_text"
             android:layout_width="match_parent"

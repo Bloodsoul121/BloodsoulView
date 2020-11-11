@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.airbnb.lottie.LottieAnimationView;
 import com.airbnb.lottie.LottieDrawable;
 import com.blankj.utilcode.util.SizeUtils;
+import com.example.administrator.bloodsoulview.bigimg.BigImgActivity;
 import com.example.administrator.bloodsoulview.blur.ImageViewBlurActivity;
 import com.example.administrator.bloodsoulview.clickspan.ClickSpanActivity;
 import com.example.administrator.bloodsoulview.dialog.RcProgressDialog;
@@ -240,5 +241,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickBtn22(View view) {
         startActivity(new Intent(this, TransitionActivity.class));
+    }
+
+    public void clickBtn23(View view) {
+        startActivity(new Intent(this, BigImgActivity.class));
     }
 }
