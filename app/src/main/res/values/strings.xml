@@ -15,4 +15,26 @@
     <string name="custom_navigator">custom navigator</string>
     <string name="random_page">random page</string>
     <string name="tab_with_custom_layout">load custom layout</string>
+
+
+    <string name="long_text">在许多App中看到, toolbar有收缩和扩展的效果, 例如:要实现这样的效果, 需要用到:
+CoordinatorLayout和AppbarLayout的配合, 以及实现了NestedScrollView的布局或控件.
+AppbarLayout是一种支持响应滚动手势的app bar布局, CollapsingToolbarLayout则是专门用来实现子布局内不同元素响应滚动细节的布局.
+与AppbarLayout组合的滚动布局(RecyclerView, NestedScrollView等),需要设置在许多App中看到, toolbar有收缩和扩展的效果, 例如:要实现这样的效果, 需要用到:
+CoordinatorLayout和AppbarLayout的配合, 以及实现了NestedScrollView的布局或控件.
+AppbarLayout是一种支持响应滚动手势的app bar布局, CollapsingToolbarLayout则是专门用来实现子布局内不同元素响应滚动细节的布局.
+与AppbarLayout组合的滚动布局(RecyclerView, NestedScrollView等),需要设置在许多App中看到, toolbar有收缩和扩展的效果, 例如:要实现这样的效果, 需要用到:
+CoordinatorLayout和AppbarLayout的配合, 以及实现了NestedScrollView的布局或控件.
+AppbarLayout是一种支持响应滚动手势的app bar布局, CollapsingToolbarLayout则是专门用来实现子布局内不同元素响应滚动细节的布局.
+与AppbarLayout组合的滚动布局(RecyclerView, NestedScrollView等),需要设置在许多App中看到, toolbar有收缩和扩展的效果, 例如:要实现这样的效果, 需要用到:
+CoordinatorLayout和AppbarLayout的配合, 以及实现了NestedScrollView的布局或控件.
+AppbarLayout是一种支持响应滚动手势的app bar布局, CollapsingToolbarLayout则是专门用来实现子布局内不同元素响应滚动细节的布局.
+与AppbarLayout组合的滚动布局(RecyclerView, NestedScrollView等),需要设置在许多App中看到, toolbar有收缩和扩展的效果, 例如:要实现这样的效果, 需要用到:
+CoordinatorLayout和AppbarLayout的配合, 以及实现了NestedScrollView的布局或控件.
+AppbarLayout是一种支持响应滚动手势的app bar布局, CollapsingToolbarLayout则是专门用来实现子布局内不同元素响应滚动细节的布局.
+与AppbarLayout组合的滚动布局(RecyclerView, NestedScrollView等),需要设置在许多App中看到, toolbar有收缩和扩展的效果, 例如:要实现这样的效果, 需要用到:
+CoordinatorLayout和AppbarLayout的配合, 以及实现了NestedScrollView的布局或控件.
+AppbarLayout是一种支持响应滚动手势的app bar布局, CollapsingToolbarLayout则是专门用来实现子布局内不同元素响应滚动细节的布局.
+与AppbarLayout组合的滚动布局(RecyclerView, NestedScrollView等),需要设置 app:layout_behavior =</string>
+
 </resources>

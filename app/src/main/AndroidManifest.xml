@@ -16,8 +16,11 @@
         android:roundIcon="@drawable/launch"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".bigimg.BigImgActivity"></activity>
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:replace="android:allowBackup">
+        <activity android:name=".svga.SvgaActivity"></activity>
+        <activity android:name=".DesignActivity" />
+        <activity android:name=".bigimg.BigImgActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".TransitionActivity" />
         <activity android:name=".ParticleActivity" />

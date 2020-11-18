@@ -26,6 +26,7 @@ import com.example.administrator.bloodsoulview.marquee.MarqueeText2;
 import com.example.administrator.bloodsoulview.optionmenu.MenuOptionActivity;
 import com.example.administrator.bloodsoulview.record_song.RecordSongActivity;
 import com.example.administrator.bloodsoulview.shadow.ShadowDrawable;
+import com.example.administrator.bloodsoulview.svga.SvgaActivity;
 import com.example.administrator.bloodsoulview.ticker.TickerActivity;
 import com.example.administrator.bloodsoulview.turntable.TurntableActivity;
 import com.example.administrator.bloodsoulview.view.LinearGradientTextView;
@@ -245,5 +246,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickBtn23(View view) {
         startActivity(new Intent(this, BigImgActivity.class));
+    }
+
+    public void clickBtn24(View view) {
+        startActivity(new Intent(this, DesignActivity.class));
+    }
+
+    public void clickBtn25(View view) {
+        startActivity(new Intent(this, SvgaActivity.class));
     }
 }

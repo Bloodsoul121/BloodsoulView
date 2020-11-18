@@ -3,6 +3,7 @@ package com.example.administrator.bloodsoulview;
 import android.app.Application;
 
 import com.blankj.utilcode.util.Utils;
+import com.opensource.svgaplayer.SVGAParser;
 
 public class MainApplication extends Application {
 
@@ -19,9 +20,11 @@ public class MainApplication extends Application {
         Utils.init(this);
 
         pritNoBug();
+
+        SVGAParser.Companion.shareParser().init(this);
     }
 
-    public static void pritNoBug(){
+    public static void pritNoBug() {
         System.out.println(" ......................我佛慈悲......................");
         System.out.println("                       _oo0oo_                      ");
         System.out.println("                      o8888888o                     ");
