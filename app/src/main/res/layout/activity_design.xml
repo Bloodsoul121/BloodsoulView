@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".DesignActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -15,12 +16,14 @@
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
             app:contentScrim="@color/orange"
             app:expandedTitleMarginEnd="60dp"
             app:expandedTitleMarginStart="48dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
             app:statusBarScrim="@android:color/transparent"
-            app:titleEnabled="false">
+            app:title="Collapsing"
+            app:titleEnabled="true">
 
             <ImageView
                 android:layout_width="match_parent"
