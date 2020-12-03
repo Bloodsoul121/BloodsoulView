@@ -18,7 +18,8 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
-        <activity android:name=".svga.SvgaActivity"></activity>
+        <activity android:name=".FlipboardActivity"></activity>
+        <activity android:name=".svga.SvgaActivity" />
         <activity android:name=".DesignActivity" />
         <activity android:name=".bigimg.BigImgActivity" />
         <activity android:name=".MainActivity" />

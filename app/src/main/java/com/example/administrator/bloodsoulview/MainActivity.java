@@ -255,4 +255,8 @@ public class MainActivity extends AppCompatActivity {
     public void clickBtn25(View view) {
         startActivity(new Intent(this, SvgaActivity.class));
     }
+
+    public void clickBtn26(View view) {
+        startActivity(new Intent(this, FlipboardActivity.class));
+    }
 }

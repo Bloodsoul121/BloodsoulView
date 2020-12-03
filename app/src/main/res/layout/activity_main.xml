@@ -180,6 +180,12 @@
             android:text="svga"
             tools:ignore="HardcodedText" />
 
+        <Button
+            style="@style/normal_button"
+            android:onClick="clickBtn26"
+            android:text="flipboard"
+            tools:ignore="HardcodedText" />
+
         <TextView
             android:id="@+id/color_text"
             android:layout_width="match_parent"

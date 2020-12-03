@@ -56,4 +56,8 @@
 
     </declare-styleable>
 
+    <declare-styleable name="MapView">
+        <attr name="mv_background" format="reference" />
+    </declare-styleable>
+
 </resources>
