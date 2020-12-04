@@ -259,4 +259,8 @@ public class MainActivity extends AppCompatActivity {
     public void clickBtn26(View view) {
         startActivity(new Intent(this, FlipboardActivity.class));
     }
+
+    public void clickBtn27(View view) {
+        startActivity(new Intent(this, CameraActivity.class));
+    }
 }
