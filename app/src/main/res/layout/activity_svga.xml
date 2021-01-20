@@ -7,12 +7,6 @@
     android:orientation="vertical"
     tools:context=".svga.SvgaActivity">
 
-    <com.example.administrator.bloodsoulview.svga.WrapSVGAImageView
-        android:id="@+id/svgaview"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        app:autoPlay="false" />
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,5 +18,25 @@
         android:layout_height="wrap_content"
         android:onClick="clickBtn2"
         android:text="woman" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickBtn3"
+        android:text="tm" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickBtn4"
+        android:text="红包" />
+
+    <com.example.administrator.bloodsoulview.svga.WrapSVGAImageView
+        android:id="@+id/svgaview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#999999"
+        android:scaleType="centerCrop"
+        app:autoPlay="false" />
 
 </LinearLayout>

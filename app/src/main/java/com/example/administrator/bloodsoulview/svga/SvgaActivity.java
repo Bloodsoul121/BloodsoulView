@@ -29,4 +29,14 @@ public class SvgaActivity extends AppCompatActivity {
     public void clickBtn2(View view) {
         mSvgaView.loadSvgaAssets("speak_wave_anim_woman.svga");
     }
+
+    public void clickBtn3(View view) {
+        mSvgaView.loadSvgaAssets("tm.svga");
+    }
+
+    public void clickBtn4(View view) {
+        mSvgaView.setLoops(1);
+        mSvgaView.setClearsAfterStop(false);
+        mSvgaView.loadSvgaAssets("livehongbao.svga");
+    }
 }
