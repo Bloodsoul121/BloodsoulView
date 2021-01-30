@@ -18,7 +18,8 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
-        <activity android:name=".CameraActivity"></activity>
+        <activity android:name=".tablayout.TabLayoutActivity"/>
+        <activity android:name=".CameraActivity" />
         <activity android:name=".FlipboardActivity" />
         <activity android:name=".svga.SvgaActivity" />
         <activity android:name=".DesignActivity" />

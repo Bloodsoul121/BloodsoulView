@@ -27,6 +27,7 @@ import com.example.administrator.bloodsoulview.optionmenu.MenuOptionActivity;
 import com.example.administrator.bloodsoulview.record_song.RecordSongActivity;
 import com.example.administrator.bloodsoulview.shadow.ShadowDrawable;
 import com.example.administrator.bloodsoulview.svga.SvgaActivity;
+import com.example.administrator.bloodsoulview.tablayout.TabLayoutActivity;
 import com.example.administrator.bloodsoulview.ticker.TickerActivity;
 import com.example.administrator.bloodsoulview.turntable.TurntableActivity;
 import com.example.administrator.bloodsoulview.view.LinearGradientTextView;
@@ -262,5 +263,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickBtn27(View view) {
         startActivity(new Intent(this, CameraActivity.class));
+    }
+
+    public void clickBtn28(View view) {
+        startActivity(new Intent(this, TabLayoutActivity.class));
     }
 }
